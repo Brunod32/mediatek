@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Musique{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>Les groupes</h1>
+        <a href="{{ path('app_band_new') }}" class="dashboard"><i class="bi bi-plus-circle"></i></a>
+    </header>
+    
+
+    {% for band in bands %}
+    <main class="container">
+        <div class="card" style="max-width: 18rem;">
+            {% if band.picture %}
+                <img src="{{ band.picture }}" title="{{ band.name }}" class="card-img-top" alt="Image de {{ band.name }}">
+            {% else %} 
+                <img src="{{ asset('asset/img/bandDefault.jpg') }}" title="Image de concert" class="card-img-top" alt="Image de concert">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ band.name }}</h5>
+                <div class="cardLinks">
+                    <a href="{{ path('app_band_show', {'id': band.id}) }}">Consulter</a>
+                    <a href="{{ path('app_band_edit', {'id': band.id}) }}">Modifier</a>
+                </div>
+                
+            </div>
+        </div>
+        {% else %}
+            <p class="text-center">Aucun groupe trouvé...</p>
+        {% endfor %}
+    </main>
+
+{% endblock %}

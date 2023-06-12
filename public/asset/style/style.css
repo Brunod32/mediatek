@@ -1,13 +1,18 @@
 body {
   background-color: #3c4043;
   font-family: Roboto, "Segoe UI", Tahoma, sans-serif;
+  color: white;
 }
 
 h1 {
-  color: white;
   text-align: center;
   margin-top: 75px;
-  margin-bottom: 100px;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 75px;
 }
 
 main {
@@ -22,10 +27,49 @@ main {
   margin-bottom: 40px;
 }
 
+i {
+  font-size: 32px;
+}
+
+.bi-backspace-fill {
+  color: green;
+}
+
+.bi-pencil-square {
+  color: skyblue;
+}
+
+.btnDelete {
+  background-color: #3c4043;
+  border: none;
+  color: red;
+}
+
+.card {
+  background-color: #828283;
+}
+
+.cardLinks {
+  display: flex;
+  justify-content: space-around;
+}
+
+a {
+  text-decoration: none;
+}
+
+.formInForm {
+  padding-right: 25px;
+}
+
 @media screen and (min-width: 800px) {
   main {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+  }
+  .formDiv {
+    display: flex;
+    flex-direction: row;
   }
 }/*# sourceMappingURL=style.css.map */
