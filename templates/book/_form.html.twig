@@ -1,0 +1,15 @@
+{{ form_start(form) }}
+<div class="formDiv">
+    <div class="formInForm">
+        {{ form_row(form.title, { 'label': 'Titre du livre'}) }}
+        {{ form_row(form.nbPages, { 'label': 'Nombre de pages'}) }}
+        {{ form_row(form.bookCover, { 'label': 'Couverture du livre'}) }}
+    </div>
+    <div class="formInForm">
+        {{ form_row(form.synopsis, { 'label': 'Résumé'}) }}
+        {{ form_row(form.writer, { 'label': 'Auteur'}) }}
+    </div>
+</div>
+    
+    <button class="btn btn-outline-primary mt-4">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}

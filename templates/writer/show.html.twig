@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Auteur{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>{{ writer.firstname ~ ' ' ~ writer.lastname }}</h1>
+        <div class="dashboard">
+            <a href="{{ path('app_writer_index') }}"><i class="bi bi-backspace-fill"></i></a>
+
+            <a href="{{ path('app_writer_edit', {'id': writer.id}) }}"><i class="bi bi-pencil-square"></i></a>
+
+            {{ include('writer/_delete_form.html.twig') }}
+        </div>
+    </header>
+    
+    <main>
+        <div>
+            
+            
+            <div class="mt-4">
+                <h3>Pays :</h3>
+                <p>{{ writer.country}}</p>
+            </div>
+
+            <div class="mt-4">
+                <h3>Bibliographie :</h3>
+                {% for books in writer.books %}
+                <ul>
+                    <li><a href="{{ path('app_book_show', {'id': books.id }) }}">{{ books.title }}</a></li>
+                </ul>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="mt-4">
+        {% if writer.picture %}
+            <img src="{{ writer.picture }}" alt="Photo de {{ writer.firstname ~ ' ' ~ writer.lastname }}">
+        {% else %}
+            <img src="{{ asset('asset/img/writerDefault.png') }}" alt="Image de remplacement de l'auteur" class="fakeImg">
+        {% endif %}
+        </div>
+
+    </main>    
+    
+
+    
+{% endblock %}

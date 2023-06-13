@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Livre{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>{{ book.title }}</h1>
+        <div class="dashboard">
+            <a href="{{ path('app_book_index') }}"><i class="bi bi-backspace-fill"></i></a>
+
+            <a href="{{ path('app_book_edit', {'id': book.id}) }}"><i class="bi bi-pencil-square"></i></a>
+
+            {{ include('book/_delete_form.html.twig') }}
+        </div>
+    </header>
+    
+
+    <main>
+        <div>
+            <div class="mt-4">
+                <h3>Auteur :</h3>
+                <a href="{{ path('app_writer_show', {'id': book.writer.id}) }}">{{ book.writer }}</a>
+            </div>
+            <div class="mt-4">
+                <h3>Résumé :</h3>
+                <p>{{ book.synopsis}}</p>
+            </div>
+            <div class="mt-4">
+                <h3>Nombre de pages :</h3>
+                <p>{{ book.nbPages}}</p>
+            </div>
+        </div>
+        <div class="mt-4">
+        {% if book.bookCover %}
+            <img src="{{ book.bookCover }}" alt="Photo de {{ book.title }}">
+        {% else %}
+            <img src="{{ asset('asset/img/bookDefault.png') }}" alt="Photo de {{ book.title }}" class="fakeImg">
+        {% endif %}
+        </div>
+    </main>
+
+{% endblock %}

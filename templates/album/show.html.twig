@@ -26,7 +26,11 @@
         </div>
 
         <div>
+        {% if album.albumCover %}
             <img src="{{ album.albumCover }}" alt="Pochette du CD">
+        {% else %}
+            <img src="{{ asset('asset/img/cdDefault.jpg') }}" alt="Pochette du CD">
+        {% endif %}
         </div>
         
     </main>

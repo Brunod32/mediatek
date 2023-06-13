@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bibliothèque{% endblock %}
+
+{% block body %}
+{% include 'navbar.html.twig' %}
+    <header>
+        <h1>Bibliothèque</h1>
+        <a href="{{ path('app_book_new') }}" class="dashboard"><i class="bi bi-plus-circle"></i></a>
+    </header>
+    
+
+    
+        {% for book in books %}
+        <main class="container">
+            <div class="card" style="max-width: 24rem;">
+                {% if book.bookCover %}
+                    <img src="{{ book.bookCover }}" title="{{ book.title }}" class="card-img-top" alt="Image de {{ book.title }}">
+                {% else %} 
+                    <img src="{{ asset('asset/img/bookDefault.png') }}" title="Image de livres" class="card-img-top" alt="Couverture de {{ book.title }}">
+                {% endif %}
+                <div class="card-body">
+                    <a href="{{ path('app_book_show', {'id': book.id}) }}"><h5 class="card-title">{{ book.title }}</h5></a>
+                
+                </div>
+            </div>
+            {% else %}
+                <p class="text-center">Aucun livre trouvé...</p>
+            {% endfor %}
+        </main>
+
+{% endblock %}
