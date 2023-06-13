@@ -34,7 +34,7 @@ class BookController extends AbstractController
             return $this->redirectToRoute('app_book_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('book/new.html.twig', [
+        return $this->render('book/new.html.twig', [
             'book' => $book,
             'form' => $form,
         ]);
@@ -60,7 +60,7 @@ class BookController extends AbstractController
             return $this->redirectToRoute('app_book_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('book/edit.html.twig', [
+        return $this->render('book/edit.html.twig', [
             'book' => $book,
             'form' => $form,
         ]);

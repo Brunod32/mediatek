@@ -29,6 +29,7 @@ class BookType extends AbstractType
                 'multiple'=> false,
                 'expanded' => false,
             ])
+            ->add('releasedYear', TextType::class)
         ;
     }
 

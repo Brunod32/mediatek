@@ -34,7 +34,7 @@ class WriterController extends AbstractController
             return $this->redirectToRoute('app_writer_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('writer/new.html.twig', [
+        return $this->render('writer/new.html.twig', [
             'writer' => $writer,
             'form' => $form,
         ]);
@@ -60,7 +60,7 @@ class WriterController extends AbstractController
             return $this->redirectToRoute('app_writer_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('writer/edit.html.twig', [
+        return $this->render('writer/edit.html.twig', [
             'writer' => $writer,
             'form' => $form,
         ]);

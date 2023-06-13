@@ -22,6 +22,10 @@
                 <a href="{{ path('app_writer_show', {'id': book.writer.id}) }}">{{ book.writer }}</a>
             </div>
             <div class="mt-4">
+                <h3>Année de sortie :</h3>
+                <p>{{ book.releasedYear }}</p>
+            </div>
+            <div class="mt-4">
                 <h3>Résumé :</h3>
                 <p>{{ book.synopsis}}</p>
             </div>
@@ -30,6 +34,7 @@
                 <p>{{ book.nbPages}}</p>
             </div>
         </div>
+        
         <div class="mt-4">
         {% if book.bookCover %}
             <img src="{{ book.bookCover }}" alt="Photo de {{ book.title }}">

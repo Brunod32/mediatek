@@ -9,27 +9,24 @@
         <a href="{{ path('app_album_new') }}" class="dashboard"><i class="bi bi-plus-circle"></i></a>
     </header>
     
-
-   
-        {% for album in albums %}
-        <main class="container">
-            <div class="card" style="max-width: 24rem;">
-                {% if album.albumCover %}
-                    <img src="{{ album.albumCover }}" title="{{ album.title }}" class="card-img-top" alt="Image de {{ album.title }}">
-                {% else %} 
-                    <img src="{{ asset('asset/img/cdDefault.jpg') }}" title="Image de concert" class="card-img-top" alt="Image de concert">
-                {% endif %}
-                <div class="card-body">
-                    <a href="{{ path('app_album_show', {'id': album.id}) }}"><h5 class="card-title">{{ album.title }}</h5></a>
-                    {# <div class="cardLinks">
-                        <a href="{{ path('app_album_show', {'id': album.id}) }}">show</a>
-                    <a href="{{ path('app_album_edit', {'id': album.id}) }}">edit</a>
-                    </div> #}                 
-                </div>
+    <main class="container">
+    {% for album in albums %}
+        <div class="card" style="max-width: 24rem;">
+            {% if album.albumCover %}
+                <img src="{{ album.albumCover }}" title="{{ album.title }}" class="card-img-top" alt="Image de {{ album.title }}">
+            {% else %} 
+                <img src="{{ asset('asset/img/cdDefault.jpg') }}" title="Image de concert" class="card-img-top" alt="Image de concert">
+            {% endif %}
+            <div class="card-body">
+                <a href="{{ path('app_album_show', {'id': album.id}) }}"><h5 class="card-title">{{ album.title }}</h5></a>
+                {# <div class="cardLinks">
+                    <a href="{{ path('app_album_show', {'id': album.id}) }}">show</a>
+                <a href="{{ path('app_album_edit', {'id': album.id}) }}">edit</a>
+                </div> #}                 
             </div>
-
+        </div>
         {% else %}
-                <p>Aucun album trouvé...</p>
+            <p>Aucun album trouvé...</p>
         {% endfor %}
     </main>
 {% endblock %}

@@ -9,44 +9,22 @@
         <a href="{{ path('app_writer_new') }}" class="dashboard"><i class="bi bi-plus-circle"></i></a>
     </header>
 
-        {% for writer in writers %}
-        <main class="container">
-            <div class="card" style="max-width: 24rem;">
-                {% if writer.picture %}
-                    <img src="{{ writer.picture }}" title="{{ writer.lastname }}" class="card-img-top" alt="Image de {{ writer.lastname }}">
-                {% else %} 
-                    <img src="{{ asset('asset/img/writerDefault.png') }}" title="Image de concert" class="card-img-top" alt="Image de concert">
-                {% endif %}
-                <div class="card-body">
-                    <a href="{{ path('app_writer_show', {'id': writer.id}) }}"><h5 class="card-title">{{ writer.firstname ~ ' ' ~ writer.lastname }}</h5></a>
-                
-                </div>
+    <main class="container">
+    {% for writer in writers %}
+        <div class="card" style="max-width: 24rem;">
+            {% if writer.picture %}
+                <img src="{{ writer.picture }}" title="{{ writer.lastname }}" class="card-img-top" alt="Image de {{ writer.lastname }}">
+            {% else %} 
+                <img src="{{ asset('asset/img/writerDefault.png') }}" title="Image de concert" class="card-img-top" alt="Image de concert">
+            {% endif %}
+            <div class="card-body">
+                <a href="{{ path('app_writer_show', {'id': writer.id}) }}"><h5 class="card-title">{{ writer.firstname ~ ' ' ~ writer.lastname }}</h5></a>
+            
             </div>
-            {% else %}
-                <p class="text-center">Aucun auteur trouvé...</p>
-            {% endfor %}
-        </main>
-
-
-
-            {# <tr>
-                <td>{{ writer.id }}</td>
-                <td>{{ writer.firstname }}</td>
-                <td>{{ writer.lastname }}</td>
-                <td>{{ writer.country }}</td>
-                <td>{{ writer.picture }}</td>
-                <td>
-                    <a href="{{ path('app_writer_show', {'id': writer.id}) }}">show</a>
-                    <a href="{{ path('app_writer_edit', {'id': writer.id}) }}">edit</a>
-                </td>
-            </tr>
+        </div>
         {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
+            <p class="text-center">Aucun auteur trouvé...</p>
         {% endfor %}
-        </tbody>
-    </table> #}
+    </main>
 
-    
 {% endblock %}

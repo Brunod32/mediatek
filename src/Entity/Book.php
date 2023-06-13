@@ -29,6 +29,9 @@ class Book
     #[ORM\ManyToOne(inversedBy: 'books')]
     private ?Writer $writer = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $releasedYear = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +93,18 @@ class Book
     public function setWriter(?Writer $writer): static
     {
         $this->writer = $writer;
+
+        return $this;
+    }
+
+    public function getReleasedYear(): ?int
+    {
+        return $this->releasedYear;
+    }
+
+    public function setReleasedYear(?int $releasedYear): static
+    {
+        $this->releasedYear = $releasedYear;
 
         return $this;
     }

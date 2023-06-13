@@ -9,9 +9,8 @@
         <a href="{{ path('app_band_new') }}" class="dashboard"><i class="bi bi-plus-circle"></i></a>
     </header>
     
-
-    {% for band in bands %}
     <main class="container">
+    {% for band in bands %}
         <div class="card" style="max-width: 24rem;">
             {% if band.picture %}
                 <img src="{{ band.picture }}" title="{{ band.name }}" class="card-img-top" alt="Image de {{ band.name }}">
@@ -20,7 +19,6 @@
             {% endif %}
             <div class="card-body">
                 <a href="{{ path('app_band_show', {'id': band.id}) }}"><h5 class="card-title">{{ band.name }}</h5></a>
-                
             </div>
         </div>
         {% else %}
