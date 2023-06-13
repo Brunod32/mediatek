@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bibliothèque{% endblock %}
+
+{% block body %}
+{% include 'navbar.html.twig' %}
+
+<div class="example-wrapper">
+    <header class="mb-5">
+        <h1>Bibliothèque</h1>
+    </header>
+    
+    <main class="container">
+        <a href="">
+            <div class="card">
+                <img src="{{ asset('asset/img/typewriter.jpg') }}" class="card-img-top" alt="Image d'une machine à écrire">
+                <div class="card-body text-center">
+                <h5 class="card-title text-primary">Les auteurs</h5>
+                </div>
+            </div>
+        </a>
+
+        <a href="">
+            <div class="card">
+                <img src="{{ asset('asset/img/bibliotheque.jpg') }}" class="card-img-top" alt="Image d'une bibliothèque">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-primary">Les livres</h5>
+                </div>
+            </div>
+        </a>
+    </main>
+    
+</div>
+{% endblock %}

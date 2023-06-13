@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Musique{% endblock %}
+
+{% block body %}
+{% include 'navbar.html.twig' %}
+
+<div class="example-wrapper">
+    <header class="mb-5">
+        <h1>Librairie musicale</h1>
+    </header>
+    
+    <main class="container">
+        <a href="{{ path('app_band_index') }}">
+            <div class="card">
+                <img src="{{ asset('asset/img/bandDefault.jpg') }}" class="card-img-top" alt="Image de concert">
+                <div class="card-body text-center">
+                <h5 class="card-title text-primary">Les groupes</h5>
+                </div>
+            </div>
+        </a>
+
+        <a href="{{ path('app_album_index') }}">
+            <div class="card">
+                <img src="{{ asset('asset/img/albumDefault.jpg') }}" class="card-img-top" alt="Image d'une platine">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-primary">Les albums</h5>
+                </div>
+            </div>
+        </a>
+    </main>
+
+
+</div>
+{% endblock %}
