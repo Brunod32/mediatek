@@ -1,0 +1,14 @@
+{{ form_start(form) }}
+    <div class="formDiv">
+        <div class="formInForm">
+            {{ form_row(form.title, { 'label' : 'Titre de l\'album'}) }}
+            {{ form_row(form.realesedYear, { 'label' : 'Année de sortie'}) }}
+        </div>
+        <div class="formInForm">
+            {{ form_row(form.albumCover, { 'label' : 'Pochette de l\'album'}) }}
+            {{ form_row(form.band, { 'label' : 'Interprète'}) }}
+        </div>
+    </div>
+
+    <button class="btn btn-outline-primary mt-4">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}

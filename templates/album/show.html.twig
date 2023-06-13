@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Album{% endblock %}
+
+{% block body %}
+
+    <header>
+        <h1>{{ album.title }}</h1>
+        <div class="dashboard">
+            <a href="{{ path('app_album_index') }}"><i class="bi bi-backspace-fill"></i></a>
+
+            <a href="{{ path('app_album_edit', {'id': album.id}) }}"><i class="bi bi-pencil-square"></i></a>
+
+            {{ include('album/_delete_form.html.twig') }}
+    
+        </div>
+    </header>
+
+    <main>
+        <div>
+            <h3>Interprète</h3>
+            <a href="{{ path('app_band_show', {'id': album.band.id}) }}">{{ album.band }}</a>
+
+            <h3 class="mt-5">Année de sortie</h3>
+            <p>{{ album.realesedYear }}</p>
+        </div>
+
+        <div>
+            <img src="{{ album.albumCover }}" alt="Pochette du CD">
+        </div>
+        
+    </main>
+
+    
+{% endblock %}

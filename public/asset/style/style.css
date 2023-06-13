@@ -39,6 +39,10 @@ i {
   color: skyblue;
 }
 
+#btn-connexion {
+  border: none;
+}
+
 .btnDelete {
   background-color: #3c4043;
   border: none;
@@ -49,9 +53,8 @@ i {
   background-color: #828283;
 }
 
-.cardLinks {
-  display: flex;
-  justify-content: space-around;
+.card {
+  width: 150px;
 }
 
 a {

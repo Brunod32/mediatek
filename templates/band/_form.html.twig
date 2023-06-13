@@ -1,18 +1,15 @@
 {{ form_start(form) }}
-<div class="formDiv">
-    <div class="formInForm">
-        {{ form_row(form.name, { 'label': 'Nom du groupe'}) }}
-        {{ form_row(form.country, { 'label': 'Pays d\'origine'}) }}
-        {{ form_row(form.creationYear, { 'label': 'Année de formation'}) }}
+    <div class="formDiv">
+        <div class="formInForm">
+            {{ form_row(form.name, { 'label': 'Nom du groupe'}) }}
+            {{ form_row(form.country, { 'label': 'Pays d\'origine'}) }}
+            {{ form_row(form.creationYear, { 'label': 'Année de formation'}) }}
+        </div>
+        <div class="formInForm">
+            {{ form_row(form.kindOfMetal, { 'label': 'Style de métal'}) }}
+            {{ form_row(form.picture, { 'label': 'Photo du groupe'}) }}
+        </div>
     </div>
-    <div class="formInForm">
-        {{ form_row(form.kindOfMetal, { 'label': 'Style de métal'}) }}
-        {{ form_row(form.picture, { 'label': 'Photo du groupe'}) }}
-    </div>
-</div>
     
-    
-    
-
     <button class="btn btn-outline-primary mt-4">{{ button_label|default('Enregistrer') }}</button>
 {{ form_end(form) }}

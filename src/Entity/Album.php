@@ -26,6 +26,11 @@ class Album
     #[ORM\ManyToOne(inversedBy: 'albums')]
     private ?Band $band = null;
 
+    public function __toString()
+    {
+        return $this->title;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

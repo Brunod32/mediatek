@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un album{% endblock %}
+
+{% block body %}
+    <header>
+        <h1>Ajouter un album</h1>
+        <div class="dashboard">
+            <a href="{{ path('app_album_index') }}"><i class="bi bi-backspace-fill"></i></a>
+        </div>
+    </header>
+    
+    <main>
+        {{ include('album/_form.html.twig') }}
+
+    </main>
+
+{% endblock %}
