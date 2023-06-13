@@ -9,10 +9,8 @@
         <a href="{{ path('app_book_new') }}" class="dashboard"><i class="bi bi-plus-circle"></i></a>
     </header>
     
-
-    
-    {% for book in books %}
     <main class="container">
+    {% for book in books %}
         <div class="card" style="max-width: 24rem;">
             {% if book.bookCover %}
                 <img src="{{ book.bookCover }}" title="{{ book.title }}" class="card-img-top" alt="Image de {{ book.title }}">
