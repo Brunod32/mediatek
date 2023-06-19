@@ -35,7 +35,7 @@
 
         <div class="mt-4">
         {% if writer.picture %}
-            <img src="{{ writer.picture }}" alt="Photo de {{ writer.firstname ~ ' ' ~ writer.lastname }}">
+            <img src="{{ writer.picture }}" class="writerImg" alt="Photo de {{ writer.firstname ~ ' ' ~ writer.lastname }}">
         {% else %}
             <img src="{{ asset('asset/img/writerDefault.png') }}" alt="Image de remplacement de l'auteur" class="fakeImg">
         {% endif %}

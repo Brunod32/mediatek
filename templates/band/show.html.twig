@@ -44,7 +44,7 @@
 
         <div class="mt-4">
         {% if band.picture %}
-            <img src="{{ band.picture }}" alt="image du groupe">
+            <img src="{{ band.picture }}" class="bandImg" alt="image du groupe">
         {% else %}
             <img src="{{ asset('asset/img/bandDefault.jpg') }}" alt="image du groupe" class="fakeImgBand">
         {% endif %}

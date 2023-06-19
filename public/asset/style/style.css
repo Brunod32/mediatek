@@ -77,6 +77,13 @@ a {
   width: 200px;
 }
 
+.bandImg,
+.cdImg,
+.writerImg,
+.bookImg {
+  width: 400px;
+}
+
 @media screen and (min-width: 800px) {
   main {
     display: flex;
