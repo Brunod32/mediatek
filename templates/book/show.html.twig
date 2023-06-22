@@ -3,15 +3,18 @@
 {% block title %}Livre{% endblock %}
 
 {% block body %}
+{% include 'navbar.html.twig' %}
     <header>
         <h1>{{ book.title }}</h1>
-        <div class="dashboard">
-            <a href="{{ path('app_book_index') }}"><i class="bi bi-backspace-fill"></i></a>
+        {% if app.user %}
+            <div class="dashboard">
+                <a href="{{ path('app_book_index') }}"><i class="bi bi-backspace-fill"></i></a>
 
-            <a href="{{ path('app_book_edit', {'id': book.id}) }}"><i class="bi bi-pencil-square"></i></a>
+                <a href="{{ path('app_book_edit', {'id': book.id}) }}"><i class="bi bi-pencil-square"></i></a>
 
-            {{ include('book/_delete_form.html.twig') }}
-        </div>
+                {{ include('book/_delete_form.html.twig') }}
+            </div>
+        {% endif %}
     </header>
     
 

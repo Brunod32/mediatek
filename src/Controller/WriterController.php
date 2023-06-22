@@ -10,10 +10,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/writer')]
 class WriterController extends AbstractController
 {
-    #[Route('/', name: 'app_writer_index', methods: ['GET'])]
+    #[Route('/writer/', name: 'app_writer_index', methods: ['GET'])]
     public function index(WriterRepository $writerRepository): Response
     {
         return $this->render('writer/index.html.twig', [
@@ -21,7 +20,7 @@ class WriterController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_writer_new', methods: ['GET', 'POST'])]
+    #[Route('/admin/writer/new', name: 'app_writer_new', methods: ['GET', 'POST'])]
     public function new(Request $request, WriterRepository $writerRepository): Response
     {
         $writer = new Writer();
@@ -40,7 +39,7 @@ class WriterController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_writer_show', methods: ['GET'])]
+    #[Route('/writer/{id}', name: 'app_writer_show', methods: ['GET'])]
     public function show(Writer $writer): Response
     {
         return $this->render('writer/show.html.twig', [
@@ -48,7 +47,7 @@ class WriterController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_writer_edit', methods: ['GET', 'POST'])]
+    #[Route('/admin/writer/{id}/edit', name: 'app_writer_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Writer $writer, WriterRepository $writerRepository): Response
     {
         $form = $this->createForm(WriterType::class, $writer);
@@ -66,7 +65,7 @@ class WriterController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_writer_delete', methods: ['POST'])]
+    #[Route('/admin/writer/{id}', name: 'app_writer_delete', methods: ['POST'])]
     public function delete(Request $request, Writer $writer, WriterRepository $writerRepository): Response
     {
         if ($this->isCsrfTokenValid('delete'.$writer->getId(), $request->request->get('_token'))) {

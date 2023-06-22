@@ -3,17 +3,18 @@
 {% block title %}Album{% endblock %}
 
 {% block body %}
-
+{% include 'navbar.html.twig' %}
     <header>
         <h1>{{ album.title }}</h1>
-        <div class="dashboard">
-            <a href="{{ path('app_album_index') }}"><i class="bi bi-backspace-fill"></i></a>
+        {% if app.user %}
+            <div class="dashboard">
+                <a href="{{ path('app_album_index') }}"><i class="bi bi-backspace-fill"></i></a>
 
-            <a href="{{ path('app_album_edit', {'id': album.id}) }}"><i class="bi bi-pencil-square"></i></a>
+                <a href="{{ path('app_album_edit', {'id': album.id}) }}"><i class="bi bi-pencil-square"></i></a>
 
-            {{ include('album/_delete_form.html.twig') }}
-    
-        </div>
+                {{ include('album/_delete_form.html.twig') }}
+            </div>
+        {% endif %}
     </header>
 
     <main>
@@ -29,7 +30,7 @@
         {% if album.albumCover %}
             <img src="{{ album.albumCover }}" class="cdImg" alt="Pochette du CD">
         {% else %}
-            <img src="{{ asset('asset/img/cdDefault.jpg') }}" alt="Pochette du CD">
+            <img src="{{ asset('asset/img/cdDefault.jpg') }}" class="cdImg" alt="Pochette du CD">
         {% endif %}
         </div>
         

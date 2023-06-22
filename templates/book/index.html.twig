@@ -6,7 +6,9 @@
 {% include 'navbar.html.twig' %}
     <header>
         <h1>Bibliothèque</h1>
-        <a href="{{ path('app_book_new') }}" class="dashboard"><i class="bi bi-plus-circle"></i></a>
+        {% if app.user %}
+            <a href="{{ path('app_book_new') }}" class="dashboard"><i class="bi bi-plus-circle"></i></a>
+        {% endif %}
     </header>
     
     <main class="container">
@@ -17,7 +19,7 @@
             {% else %} 
                 <img src="{{ asset('asset/img/bookDefault.png') }}" title="Image de livres" class="card-img-top" alt="Couverture de {{ book.title }}">
             {% endif %}
-            <div class="card-body">
+            <div class="card-body text-center">
                 <a href="{{ path('app_book_show', {'id': book.id}) }}"><h5 class="card-title">{{ book.title }}</h5></a>
             
             </div>

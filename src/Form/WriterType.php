@@ -16,7 +16,9 @@ class WriterType extends AbstractType
             ->add('firstname', TextType::class)
             ->add('lastname', TextType::class)
             ->add('country', TextType::class)
-            ->add('picture', TextType::class)
+            ->add('picture', TextType::class, [
+                'required' => false,
+            ])
         ;
     }
 

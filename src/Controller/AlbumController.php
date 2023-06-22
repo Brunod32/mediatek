@@ -10,10 +10,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/album')]
 class AlbumController extends AbstractController
 {
-    #[Route('/', name: 'app_album_index', methods: ['GET'])]
+    #[Route('/album/', name: 'app_album_index', methods: ['GET'])]
     public function index(AlbumRepository $albumRepository): Response
     {
         return $this->render('album/index.html.twig', [
@@ -21,7 +20,7 @@ class AlbumController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_album_new', methods: ['GET', 'POST'])]
+    #[Route('admin/album/new', name: 'app_album_new', methods: ['GET', 'POST'])]
     public function new(Request $request, AlbumRepository $albumRepository): Response
     {
         $album = new Album();
@@ -40,7 +39,7 @@ class AlbumController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_album_show', methods: ['GET'])]
+    #[Route('/album/{id}', name: 'app_album_show', methods: ['GET'])]
     public function show(Album $album): Response
     {
         return $this->render('album/show.html.twig', [
@@ -48,7 +47,7 @@ class AlbumController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_album_edit', methods: ['GET', 'POST'])]
+    #[Route('admin/album/{id}/edit', name: 'app_album_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Album $album, AlbumRepository $albumRepository): Response
     {
         $form = $this->createForm(AlbumType::class, $album);
@@ -66,7 +65,7 @@ class AlbumController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_album_delete', methods: ['POST'])]
+    #[Route('/admin/album/{id}', name: 'app_album_delete', methods: ['POST'])]
     public function delete(Request $request, Album $album, AlbumRepository $albumRepository): Response
     {
         if ($this->isCsrfTokenValid('delete'.$album->getId(), $request->request->get('_token'))) {

@@ -6,7 +6,9 @@
 {% include 'navbar.html.twig' %}
     <header>
         <h1>Les auteurs</h1>
-        <a href="{{ path('app_writer_new') }}" class="dashboard"><i class="bi bi-plus-circle"></i></a>
+        {% if app.user %}
+            <a href="{{ path('app_writer_new') }}" class="dashboard"><i class="bi bi-plus-circle"></i></a>
+        {% endif %}
     </header>
 
     <main class="container">
@@ -17,7 +19,7 @@
             {% else %} 
                 <img src="{{ asset('asset/img/writerDefault.png') }}" title="Image de concert" class="card-img-top" alt="Image de concert">
             {% endif %}
-            <div class="card-body">
+            <div class="card-body text-center">
                 <a href="{{ path('app_writer_show', {'id': writer.id}) }}"><h5 class="card-title">{{ writer.firstname ~ ' ' ~ writer.lastname }}</h5></a>
             
             </div>

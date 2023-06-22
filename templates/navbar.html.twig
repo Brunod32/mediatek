@@ -15,10 +15,18 @@
         
         <div class="col-md-3 text-end navbarEnd">
             <form action="{{ path('search-result')}}">
-                <input name="search" id="search" class="search" type="text" placeholder="Rechercher un groupe" title="Rechercher">
+                <input name="search" id="search" class="search" type="text" placeholder="Rechercher" title="Rechercher">
                 <button type="submit" id="go" title="Go"><i class="bi bi-search"></i></button>
             </form>
-            <button type="button" class="btn btn-outline-primary me-2" id="btn-connexion"><i class="bi bi-box-arrow-in-right"></i></button>
+           
+           <div id="btn-log">
+                {% if not app.user %}
+                    <a href="{{ path('app_login') }}" type="button" class="btn btn-outline-primary me-2 px-2"><i class="bi bi-box-arrow-in-right"></i></a>
+                {% endif %}
+                {% if app.user %}
+                    <a href="{{ path('app_logout') }}" type="button" class="btn btn-outline-primary me-2 px-2"><i class="bi bi-box-arrow-in-left"></i></a>
+                {% endif %}
+           </div>
             {# <button type="button" class="btn btn-primary">Sign-up</button> #}
         </div>
     </header>
