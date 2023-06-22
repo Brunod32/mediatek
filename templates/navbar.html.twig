@@ -6,13 +6,18 @@
             </a>
         </div> #}
 
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <ul class="nav col-6 col-md-auto mb-2 justify-content-center mb-md-0">
             <li><a href="{{ path('app_home') }}" class="nav-link px-2">Accueil</a></li>
             <li><a href="{{ path('app_reading') }}" class="nav-link px-2">Bibliothèque</a></li>
             <li><a href="{{ path('app_music') }}" class="nav-link px-2">CDthèque</a></li>
         </ul>
 
-        <div class="col-md-3 text-end">
+        
+        <div class="col-md-3 text-end navbarEnd">
+            <form action="{{ path('search-result')}}">
+                <input name="search" id="search" class="search" type="text" placeholder="Rechercher un groupe" title="Rechercher">
+                <button type="submit" id="go" title="Go"><i class="bi bi-search"></i></button>
+            </form>
             <button type="button" class="btn btn-outline-primary me-2" id="btn-connexion"><i class="bi bi-box-arrow-in-right"></i></button>
             {# <button type="button" class="btn btn-primary">Sign-up</button> #}
         </div>

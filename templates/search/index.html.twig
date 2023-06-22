@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Résultats de recherche
+{% endblock %}
+
+{% block body %}
+    {{ include('navbar.html.twig') }}
+    <h1 class="m-5">Résultats de la recherche pour:  {{ search }}</h1>
+
+    {% for bandsSearch in bandsSearches %}
+        <section class="container">
+            <hr>
+            <h4>{{ bandsSearch.name }}</h4>
+            <div class="container-search">
+                {% if bandsSearch.picture %}
+                    <img src="{{ bandsSearch.picture }}" alt="Image du groupe {{ bandsSearch.name }}" class="bandImg">
+                {% endif %}
+                <a href="{{ path('app_band_show', {'id': bandsSearch.id}) }}">Voir les détails</a>
+            </div>
+        </section>
+    {% endfor %}
+
+    {% for albumsSearch in albumsSearches %}
+        <section class="container">
+            <hr>
+            <h4>{{ albumsSearch.title }}</h4>
+            <div class="container-search">
+                {% if albumsSearch.albumCover %}
+                    <img src="{{ albumsSearch.albumCover }}" alt="Couverture de l'album {{ albumsSearch.title }}" class="searchImg">
+                {% endif %}
+                <a href="{{ path('app_album_show', {'id': albumsSearch.id}) }}">Voir les détails</a>
+            </div>
+        </section>
+    {% endfor %}
+
+    {% for writersSearch in writersSearches %}
+        <section class="container">
+            <hr>
+            <h4>{{ writersSearch.firstname }} {{ writersSearch.lastname }}</h4>
+            <div class="container-search">
+                {% if writersSearch.picture %}
+                    <img src="{{ writersSearch.picture }}" alt="Photo de {{ writersSearch.firstname }} {{ writersSearch.lastname }}" class="searchImg">
+                {% endif %}
+                <a href="{{ path('app_writer_show', {'id': writersSearch.id}) }}">Voir les détails</a>
+            </div>
+        </section>
+    {% endfor %}
+
+    {% for booksSearch in booksSearches %}
+        <section class="container">
+            <hr>
+            <h4>{{ booksSearch.title }}</h4>
+            <div class="container-search">
+                {% if booksSearch.bookCover %}
+                    <img src="{{ booksSearch.bookCover }}" alt="Couverture de {{ booksSearch.title }}" class="searchImg">
+                {% endif %}
+                <a href="{{ path('app_book_show', {'id': booksSearch.id}) }}">Voir les détails</a>
+            </div>
+        </section>
+    {% endfor %}
+{% endblock %}
+
+
+

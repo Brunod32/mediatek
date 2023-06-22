@@ -39,6 +39,17 @@ class WriterRepository extends ServiceEntityRepository
         }
     }
 
+    public function searchWriter(string $search): array
+    {
+        $qb = $this->createQueryBuilder('writer');
+        $query = $qb->select('writer')
+            ->where('writer.firstname LIKE :search or writer.lastname LIKE :search')
+            ->setParameter('search', '%'.$search.'%')
+            ->getQuery();
+
+        return $query->getResult();
+    }
+
 //    /**
 //     * @return Writer[] Returns an array of Writer objects
 //     */

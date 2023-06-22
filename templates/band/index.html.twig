@@ -6,10 +6,6 @@
 {% include 'navbar.html.twig' %}
     <header>
         <h1>Les groupes</h1>
-        <form action="{{ path('search-result')}}">
-            <input name="search" id="search" class="search" type="text" placeholder="Rechercher un groupe" title="Rechercher">
-            <button type="submit" id="go" title="Go"><i class="bi bi-search"></i></button>
-        </form>
         <a href="{{ path('app_band_new') }}" class="dashboard"><i class="bi bi-plus-circle"></i></a>
     </header>
     
