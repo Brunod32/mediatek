@@ -21,6 +21,28 @@ class BandController extends AbstractController
         ]);
     }
 
+    #[Route('/band-search/{id}', name: 'band', methods: ['GET'])]
+    // La classe BandRepository permet d'effectuer les requêtes sql SELECT voulues via 4 methodes find()
+    public function search($id, BandRepository $bandRepository): Response
+    {
+        $bandSearch = $bandRepository->find($id);
+        return $this->render('band/search.html.twig', [
+            'bandSearch' => $bandSearch
+        ]);
+    }
+
+    #[Route('/search-results', name: 'search-result')]
+    public function searchBand(Request $request,BandRepository $bandRepository)
+    {
+        $search = $request->query->get('search');
+        $bandsSearches = $bandRepository->searchBand($search);
+
+        return $this->render('band/search.html.twig', [
+            'bandsSearches' => $bandsSearches,
+            'search' => $search
+        ]);
+    }
+
     #[Route('/new', name: 'app_band_new', methods: ['GET', 'POST'])]
     public function new(Request $request, BandRepository $bandRepository): Response
     {

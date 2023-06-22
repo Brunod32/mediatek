@@ -39,6 +39,17 @@ class BandRepository extends ServiceEntityRepository
         }
     }
 
+    public function searchBand(string $search): array
+    {
+        $qb = $this->createQueryBuilder('band');
+        $query = $qb->select('band')
+            ->where('band.name LIKE :search')
+            ->setParameter('search', '%'.$search.'%')
+            ->getQuery();
+
+        return $query->getResult();
+    }
+
 //    /**
 //     * @return Band[] Returns an array of Band objects
 //     */

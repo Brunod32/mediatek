@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Résultats de recherche
+{% endblock %}
+
+{% block body %}
+    {{ include('navbar.html.twig') }}
+    <h1 class="m-5">Résultats de la recherche pour:  {{ search }}</h1>
+
+    {% for bandsSearch in bandsSearches %}
+        <section class="container">
+            <hr>
+            <h4>{{ bandsSearch.name }}</h4>
+            <div class="container-search">
+                {% if bandsSearch.picture %}
+                    <img src="{{ bandsSearch.picture }}" alt="Image du groupe {{ bandsSearch.name }}" class="bandImg">
+                {% endif %}
+                <a href="{{ path('app_band_show', {'id': bandsSearch.id}) }}">Voir les détails</a>
+            </div>
+        </section>
+    {% endfor %}
+{% endblock %}
+
+
+
