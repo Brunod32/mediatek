@@ -5,33 +5,29 @@
 {% block body %}
 {% include 'navbar.html.twig' %}
 
-<div class="example-wrapper">
-    <header class="mb-5">
-        <h1>Librairie musicale</h1>
-    </header>
-    
-    <main class="container">
-        <a href="{{ path('app_band_index') }}">
-            <div class="card">
-                <img src="{{ asset('asset/img/bandDefault.jpg') }}" class="card-img-top" alt="Image de concert">
-                <div class="card-body text-center">
-                    <h5 class="card-title text-primary-emphasis">Les groupes</h5>
-                    <p>({{ nbBand }})</p>
-                </div>
+<header class="mb-5">
+    <h1>Librairie musicale</h1>
+</header>
+
+<main class="container">
+    <a href="{{ path('app_band_index') }}">
+        <div class="card">
+            <img src="{{ asset('asset/img/bandDefault.jpg') }}" class="card-img-top" alt="Image de concert">
+            <div class="card-body text-center">
+                <h5 class="card-title text-primary-emphasis">Les groupes</h5>
+                <p>({{ nbBand }})</p>
             </div>
-        </a>
+        </div>
+    </a>
 
-        <a href="{{ path('app_album_index') }}">
-            <div class="card">
-                <img src="{{ asset('asset/img/albumDefault.jpg') }}" class="card-img-top" alt="Image d'une platine">
-                <div class="card-body text-center">
-                    <h5 class="card-title text-primary-emphasis">Les albums</h5>
-                    <p>({{ nbAlbum }})</p>
-                </div>
+    <a href="{{ path('app_album_index') }}">
+        <div class="card">
+            <img src="{{ asset('asset/img/albumDefault.jpg') }}" class="card-img-top" alt="Image d'une platine">
+            <div class="card-body text-center">
+                <h5 class="card-title text-primary-emphasis">Les albums</h5>
+                <p>({{ nbAlbum }})</p>
             </div>
-        </a>
-    </main>
-
-
-</div>
+        </div>
+    </a>
+</main>
 {% endblock %}
