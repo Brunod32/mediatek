@@ -41,7 +41,7 @@ class NewPwdController extends AbstractController
             $entityManager->flush();
 
             // Redirect to validation page
-            return $this->redirectToRoute('app_home');
+            return $this->redirectToRoute('app_new_password_validated');
         }
 
         return $this->render('newPwd/newPwd.html.twig', [

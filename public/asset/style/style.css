@@ -164,6 +164,20 @@ input {
   width: 25%;
 }
 
+.pwdLinkUpdate {
+  color: white;
+}
+
+.bi-hand-thumbs-up-fill {
+  color: red;
+  margin: 2rem;
+}
+
+.validatedPwdMessage {
+  font-size: 32px;
+  text-align: center;
+}
+
 @media screen and (min-width: 800px) {
   main {
     display: flex;
@@ -175,6 +189,14 @@ input {
     flex-direction: row;
   }
   navbar {
+    display: flex;
+    flex-direction: column;
+  }
+  .accountContainer {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .containerValidatedPwd {
     display: flex;
     flex-direction: column;
   }
