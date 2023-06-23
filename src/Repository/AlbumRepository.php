@@ -50,6 +50,11 @@ class AlbumRepository extends ServiceEntityRepository
         return $query->getResult();
     }
 
+    public function albumsCount():int
+    {
+        return $this->count([]);
+    }
+
 //    /**
 //     * @return Album[] Returns an array of Album objects
 //     */

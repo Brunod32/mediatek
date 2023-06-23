@@ -50,6 +50,11 @@ class BookRepository extends ServiceEntityRepository
         return $query->getResult();
     }
 
+    public function bookCount(): int
+    {
+        return $this->count([]);
+    }
+
 //    /**
 //     * @return Book[] Returns an array of Book objects
 //     */

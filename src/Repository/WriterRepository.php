@@ -50,6 +50,11 @@ class WriterRepository extends ServiceEntityRepository
         return $query->getResult();
     }
 
+    public function writerCount(): int
+    {
+        return $this->count([]);
+    }
+
 //    /**
 //     * @return Writer[] Returns an array of Writer objects
 //     */

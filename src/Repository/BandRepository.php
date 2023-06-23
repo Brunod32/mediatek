@@ -50,6 +50,12 @@ class BandRepository extends ServiceEntityRepository
         return $query->getResult();
     }
 
+    public function bandsCount(): int
+    {
+        // $nbBand = $this->findAll();
+        return $this->count([]);
+    }
+
 //    /**
 //     * @return Band[] Returns an array of Band objects
 //     */
