@@ -6,6 +6,7 @@ body {
 
 .navbarEnd {
   display: flex;
+  flex-direction: row-reverse;
 }
 
 .nav-link {
@@ -56,6 +57,11 @@ main {
 
 i {
   font-size: 32px;
+}
+
+#eye,
+#eye-slash {
+  font-size: 20px;
 }
 
 .bi-backspace-fill {

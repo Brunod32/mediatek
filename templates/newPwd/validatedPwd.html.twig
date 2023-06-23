@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau Mot de passe{% endblock %}
+
+{% block body %}
+
+<main class="container">
+    <h1 class="text-center m-5">Nouveau mot de passe valide</h1>
+    <div class="container__validatePass">
+        <i class="bi bi-hand-thumbs-up-fill container__validatePass--icon"></i>
+    </div>
+    <p class="text-center m-5" class="text-center m-5">Votre nouveau de passe a bien été modifié.</p>
+    <div class="d-flex justify-content-center">
+        <a href="{{ path('app_home') }}" class="btn btn-outline-success mt-2">Accueil</a>
+    </div>
+</main>
+{% endblock %}

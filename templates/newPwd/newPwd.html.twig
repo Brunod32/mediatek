@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier le mot de passe{% endblock %}
+
+{% block body %}
+    <header class="mb-5">
+        <h1 class="text-center mt-5">Modification de mot de passe</h1>
+        <div class="dashboard">
+            <a href="{{ path('app_home') }}"><i class="bi bi-backspace-fill"></i></a>
+        </div>
+    </header>
+
+
+    <main class="container">
+        {{ include('newPwd/_form.html.twig') }}
+    </main>
+{% endblock %}

@@ -1,0 +1,7 @@
+{{ form_start(form) }}
+
+    {{ form_row(form.password, { label : 'Nouveau mot de passe'}) }}
+
+    <button class="btn btn-outline-primary ml-5 mt-2">{{ button_label|default('Enregistrer') }}</button>
+
+{{ form_end(form) }}
