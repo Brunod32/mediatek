@@ -24,6 +24,7 @@ class Album
     private ?string $albumCover = null;
 
     #[ORM\ManyToOne(inversedBy: 'albums')]
+    #[ORM\JoinColumn(onDelete:'cascade')]
     private ?Band $band = null;
 
     public function __toString()

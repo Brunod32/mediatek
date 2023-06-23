@@ -27,6 +27,7 @@ class Book
     private ?string $synopsis = null;
 
     #[ORM\ManyToOne(inversedBy: 'books')]
+    #[ORM\JoinColumn(onDelete:'cascade')]
     private ?Writer $writer = null;
 
     #[ORM\Column(nullable: true)]
