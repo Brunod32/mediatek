@@ -5,7 +5,7 @@
 {% block body %}
 {% include 'navbar.html.twig' %}
     <header>
-        <h1>{{ writer.firstname ~ ' ' ~ writer.lastname }}</h1>
+        <h1>{{ writer.firstname|capitalize ~ ' ' ~ writer.lastname|capitalize }}</h1>
         {% if app.user %}
             <div class="dashboard">
                 <a href="{{ path('app_writer_index') }}"><i class="bi bi-backspace-fill"></i></a>
@@ -23,14 +23,14 @@
             
             <div class="mt-4">
                 <h3>Pays :</h3>
-                <p>{{ writer.country}}</p>
+                <p>{{ writer.country|capitalize}}</p>
             </div>
 
             <div class="mt-4">
                 <h3>Bibliographie :</h3>
                 {% for books in writer.books %}
                 <ul>
-                    <li><a href="{{ path('app_book_show', {'id': books.id }) }}">{{ books.title }}</a></li>
+                    <li><a href="{{ path('app_book_show', {'id': books.id }) }}">{{ books.title|title }}</a></li>
                 </ul>
                 {% endfor %}
             </div>

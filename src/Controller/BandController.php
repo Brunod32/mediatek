@@ -15,8 +15,9 @@ class BandController extends AbstractController
     #[Route('/band/', name: 'app_band_index', methods: ['GET'])]
     public function index(BandRepository $bandRepository): Response
     {
+
         return $this->render('band/index.html.twig', [
-            'bands' => $bandRepository->findAll(),
+            'bands' => $bandRepository->sortFindAll(),
         ]);
     }
 

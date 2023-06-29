@@ -31,14 +31,14 @@
             
             <div class="mt-4">
                 <h3>Style de métal :</h3>
-                <p>{{ band.kindOfMetal }}</p>
+                <p>{{ band.kindOfMetal|capitalize}}</p>
             </div>
 
             <div class="mt-4">
                 <h3>Discographie :</h3>
                 {% for albums in band.albums %}
                 <ul>
-                    <li><a href="{{ path('app_album_show', {'id': albums.id }) }}">{{ albums.title }}</a>, {{ albums.realesedYear}}</li>
+                    <li><a href="{{ path('app_album_show', {'id': albums.id }) }}">{{ albums.title|title }}</a>, {{ albums.realesedYear}}</li>
                 </ul>
                 {% endfor %}
             </div>

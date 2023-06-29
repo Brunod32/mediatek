@@ -55,6 +55,11 @@ class WriterRepository extends ServiceEntityRepository
         return $this->count([]);
     }
 
+    public function sortFindAll()
+    {
+        return $this->findBy(array(), array('lastname' => 'ASC'));
+    }
+
 //    /**
 //     * @return Writer[] Returns an array of Writer objects
 //     */

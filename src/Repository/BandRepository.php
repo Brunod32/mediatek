@@ -30,6 +30,11 @@ class BandRepository extends ServiceEntityRepository
         }
     }
 
+    public function sortFindAll()
+    {
+        return $this->findBy(array(), array('name' => 'ASC'));
+    }
+
     public function remove(Band $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);

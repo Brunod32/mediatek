@@ -20,7 +20,7 @@
                 <img src="{{ asset('asset/img/bandDefault.jpg') }}" title="Image de concert" class="card-img-top" alt="Image de concert">
             {% endif %}
             <div class="card-body text-center">
-                <a href="{{ path('app_band_show', {'id': band.id}) }}"><h5 class="card-title">{{ band.name }}</h5></a>
+                <a href="{{ path('app_band_show', {'id': band.id}) }}"><h5 class="card-title">{{ band.name|capitalize }}</h5></a>
             </div>
         </div>
         {% else %}
