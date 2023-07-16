@@ -29,6 +29,7 @@ class Writer
     private ?string $picture = null;
 
     #[ORM\OneToMany(mappedBy: 'writer', targetEntity: Book::class)]
+    #[ORM\OrderBy(["releasedYear" => "ASC"])]
     private Collection $books;
 
     public function __construct()

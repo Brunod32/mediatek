@@ -32,6 +32,8 @@ class Band
     private ?int $creationYear = null;
 
     #[ORM\OneToMany(mappedBy: 'band', targetEntity: Album::class)]
+    // Permet d'afficher la liste des albums par ordre chronologique
+    #[ORM\OrderBy(["realesedYear" => "ASC"])]
     private Collection $albums;
 
     public function __construct()
