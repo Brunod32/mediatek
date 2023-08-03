@@ -5,8 +5,10 @@ namespace App\Entity;
 use App\Repository\AlbumRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Metadata\ApiResource;
 
 #[ORM\Entity(repositoryClass: AlbumRepository::class)]
+#[ApiResource]
 class Album
 {
     #[ORM\Id]
@@ -17,7 +19,7 @@ class Album
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
-    #[ORM\Column]
+    #[ORM\Column(nullable: true)]
     private ?int $realesedYear = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]

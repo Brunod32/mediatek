@@ -7,8 +7,10 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\DBAL\Types\Types;
+use ApiPlatform\Metadata\ApiResource;
 
 #[ORM\Entity(repositoryClass: WriterRepository::class)]
+#[ApiResource]
 class Writer
 {
     #[ORM\Id]

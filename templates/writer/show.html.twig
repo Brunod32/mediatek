@@ -14,7 +14,7 @@
 
                 {{ include('writer/_delete_form.html.twig') }}
             </div>
-        {% endif %}
+        {% endif %} 
     </header>
     
     <main>
@@ -28,11 +28,15 @@
 
             <div class="mt-4">
                 <h3>Bibliographie :</h3>
-                {% for books in writer.books %}
-                <ul>
-                    <li><a href="{{ path('app_book_show', {'id': books.id }) }}">{{ books.title|title }}</a></li>
-                </ul>
-                {% endfor %}
+                {% if writer.books %}
+                    {% for books in writer.books %}
+                            <ul>
+                                <li><a href="{{ path('app_book_show', {'id': books.id }) }}">{{ books.title|title }}</a></li>
+                            </ul>
+                        {% else %}
+                            <p>Donnée non renseignée... </p>
+                    {% endfor %}
+                {% endif %}
             </div>
         </div>
 

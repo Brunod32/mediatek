@@ -21,26 +21,42 @@
         <div>
             <div>
                 <h3>Année de création :</h3>
-                <p>{{ band.creationYear }}</p>
+                {% if band.creationYear %}
+                    <p>{{ band.creationYear }}</p>
+                {% else %}
+                    <p>Donnée non renseignée...</p>
+                {% endif %}
             </div>
             
             <div class="mt-4">
                 <h3>Pays :</h3>
-                <p>{{ band.country}}</p>
+                {% if band.country %}
+                    <p>{{ band.country }}</p>
+                {% else %}
+                    <p>Donnée non renseignée...</p>
+                {% endif %}
             </div>
             
             <div class="mt-4">
                 <h3>Style de métal :</h3>
-                <p>{{ band.kindOfMetal|capitalize}}</p>
+                {% if band.kindOfMetal %}
+                    <p>{{ band.kindOfMetal|capitalize}}</p>
+                {% else %}
+                    <p>Donnée non renseignée...</p>
+                {% endif %}
             </div>
 
             <div class="mt-4">
                 <h3>Discographie :</h3>
-                {% for albums in band.albums %}
-                <ul>
-                    <li><a href="{{ path('app_album_show', {'id': albums.id }) }}">{{ albums.title|title }}</a>, {{ albums.realesedYear}}</li>
-                </ul>
-                {% endfor %}
+                {% if band.albums %}
+                    {% for albums in band.albums %}
+                        <ul>
+                            <li><a href="{{ path('app_album_show', {'id': albums.id }) }}">{{ albums.title|title }}</a>, {{ albums.realesedYear}}</li>
+                        </ul>
+                    {% else %}
+                        <p>Donnée non renseignée...</p>
+                    {% endfor %}
+                {% endif %}
             </div>
         </div>
 

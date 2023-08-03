@@ -26,15 +26,27 @@
             </div>
             <div class="mt-4">
                 <h3>Année de sortie :</h3>
-                <p>{{ book.releasedYear }}</p>
+                {% if book.releasedYear %}
+                    <p>{{ book.releasedYear }}</p>
+                {% else %}
+                    <p>Donnée non renseignée...</p>
+                {% endif %}
             </div>
             <div class="mt-4">
                 <h3>Résumé :</h3>
-                <p>{{ book.synopsis}}</p>
+                {% if book.synopsis %}
+                    <p>{{ book.synopsis}}</p>
+                {% else %}
+                    <p>Donnée non renseignée...</p>
+                {% endif %}
             </div>
             <div class="mt-4">
                 <h3>Nombre de pages :</h3>
-                <p>{{ book.nbPages}}</p>
+                {% if book.nbPages %}
+                    <p>{{ book.nbPages}}</p>
+                {% else %}
+                    <p>Donnée non renseignée...</p>
+                {% endif %}
             </div>
         </div>
         

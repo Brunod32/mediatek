@@ -23,7 +23,11 @@
             <a href="{{ path('app_band_show', {'id': album.band.id}) }}">{{ album.band }}</a>
 
             <h3 class="mt-5">Année de sortie</h3>
-            <p>{{ album.realesedYear }}</p>
+            {% if album.realesedYear %}
+                <p>{{ album.realesedYear }}</p>
+            {% else %}
+                <p>Donnée non renseignée...</p>
+            {% endif %}
         </div>
 
         <div>
