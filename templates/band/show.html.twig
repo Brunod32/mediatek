@@ -17,57 +17,75 @@
         {% endif %}
     </header>
 
-    <main>
-        <div>
+    <main id="bandPage">
+        <div id="bandInfos">
             <div>
-                <h3>Année de création :</h3>
-                {% if band.creationYear %}
-                    <p>{{ band.creationYear }}</p>
-                {% else %}
-                    <p>Donnée non renseignée...</p>
-                {% endif %}
-            </div>
-            
-            <div class="mt-4">
-                <h3>Pays :</h3>
-                {% if band.country %}
-                    <p>{{ band.country }}</p>
-                {% else %}
-                    <p>Donnée non renseignée...</p>
-                {% endif %}
-            </div>
-            
-            <div class="mt-4">
-                <h3>Style de métal :</h3>
-                {% if band.kindOfMetal %}
-                    <p>{{ band.kindOfMetal|capitalize}}</p>
-                {% else %}
-                    <p>Donnée non renseignée...</p>
-                {% endif %}
-            </div>
-
-            <div class="mt-4">
-                <h3>Discographie :</h3>
-                {% if band.albums %}
-                    {% for albums in band.albums %}
-                        <ul>
-                            <li><a href="{{ path('app_album_show', {'id': albums.id }) }}">{{ albums.title|title }}</a>, {{ albums.realesedYear}}</li>
-                        </ul>
+                <div>
+                    <h3>Année de création :</h3>
+                    {% if band.creationYear %}
+                        <p>{{ band.creationYear }}</p>
                     {% else %}
                         <p>Donnée non renseignée...</p>
-                    {% endfor %}
+                    {% endif %}
+                </div>
+                
+                <div class="mt-4">
+                    <h3>Pays :</h3>
+                    {% if band.country %}
+                        <p>{{ band.country }}</p>
+                    {% else %}
+                        <p>Donnée non renseignée...</p>
+                    {% endif %}
+                </div>
+                
+                <div class="mt-4">
+                    <h3>Style de métal :</h3>
+                    {% if band.kindOfMetal %}
+                        <p>{{ band.kindOfMetal|capitalize}}</p>
+                    {% else %}
+                        <p>Donnée non renseignée...</p>
+                    {% endif %}
+                </div>
+
+                <div class="mt-4">
+                    <h3>Discographie :</h3>
+                    {% if band.albums %}
+                        {% for albums in band.albums %}
+                            <ul>
+                                <li><a href="{{ path('app_album_show', {'id': albums.id }) }}">{{ albums.title|title }}</a>, {{ albums.realesedYear}}</li>
+                            </ul>
+                        {% else %}
+                            <p>Donnée non renseignée...</p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="mx-5">
+                {% if band.picture %}
+                    <img src="{{ band.picture }}" class="bandImg" alt="image du groupe">
+                {% else %}
+                    <img src="{{ asset('asset/img/bandDefault.jpg') }}" alt="image du groupe" class="fakeImgBand">
                 {% endif %}
             </div>
+
         </div>
 
-        <div class="mt-4">
-        {% if band.picture %}
-            <img src="{{ band.picture }}" class="bandImg" alt="image du groupe">
-        {% else %}
-            <img src="{{ asset('asset/img/bandDefault.jpg') }}" alt="image du groupe" class="fakeImgBand">
-        {% endif %}
+        <div class="mt-5">
+            <h2>Vous aimerez peut-être:</h2>
+            <div class="similarBands">
+            {% for allBand in allBands %}
+                {% if allBand.kindOfMetal is same as(bandKindOfMetal) and allBand.name is not same as(band.name) %}
+                    {% if allBand.picture %}
+                        <img src="{{ allBand.picture }}" class="bandImgSimilar" alt="image du groupe {{ allBand.name }}">
+                    {% else %} 
+                        <img src="{{ asset('asset/img/bandDefault.jpg') }}" title="Image de concert" class="bandImgSimilar" alt="Image de concert">
+                    {% endif %}
+                    <p>{{ allBand.name }}</p>
+                {% endif %}
+            </div>
+            {% endfor %}
         </div>
-
-    </main>    
+    </main>
 
 {% endblock %}

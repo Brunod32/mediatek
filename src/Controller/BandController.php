@@ -15,7 +15,6 @@ class BandController extends AbstractController
     #[Route('/band/', name: 'app_band_index', methods: ['GET'])]
     public function index(BandRepository $bandRepository): Response
     {
-
         return $this->render('band/index.html.twig', [
             'bands' => $bandRepository->sortFindAll(),
         ]);
@@ -41,10 +40,16 @@ class BandController extends AbstractController
     }
 
     #[Route('/band/{id}', name: 'app_band_show', methods: ['GET'])]
-    public function show(Band $band): Response
+    public function show(Band $band, BandRepository $bandRepository): Response
     {
+
+        $kindOfMetalParam = $band->getKindOfMetal();
+        $allBands = $bandRepository->findAll();
+        
         return $this->render('band/show.html.twig', [
             'band' => $band,
+            'allBands' => $allBands,
+            'bandKindOfMetal' => $kindOfMetalParam,
         ]);
     }
 
