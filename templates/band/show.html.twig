@@ -71,17 +71,18 @@
 
         </div>
 
-        <div class="mt-5">
+        <div class="mt-5 similarBandsDiv">
             <h2>Vous aimerez peut-être:</h2>
-            <div class="similarBands">
             {% for allBand in allBands %}
+            <div class="similarBands">
                 {% if allBand.kindOfMetal is same as(bandKindOfMetal) and allBand.name is not same as(band.name) %}
                     {% if allBand.picture %}
                         <img src="{{ allBand.picture }}" class="bandImgSimilar" alt="image du groupe {{ allBand.name }}">
                     {% else %} 
                         <img src="{{ asset('asset/img/bandDefault.jpg') }}" title="Image de concert" class="bandImgSimilar" alt="Image de concert">
                     {% endif %}
-                    <p>{{ allBand.name }}</p>
+                    {# <p>{{ allBand.name|title }}</p> #}
+                    <p><a href="{{ path('app_band_show', {'id': allBand.id }) }}">{{ allBand.name|title }}</a></p>
                 {% endif %}
             </div>
             {% endfor %}
