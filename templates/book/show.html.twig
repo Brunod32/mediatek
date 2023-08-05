@@ -18,44 +18,71 @@
     </header>
     
 
-    <main>
-        <div>
-            <div class="mt-4">
-                <h3>Auteur :</h3>
-                <a href="{{ path('app_writer_show', {'id': book.writer.id}) }}">{{ book.writer|title }}</a>
+    <main id="bookPage">
+        <div id="bookInfos">
+            <div>
+                <div class="mt-4">
+                    <h3>Auteur :</h3>
+                    <a href="{{ path('app_writer_show', {'id': book.writer.id}) }}">{{ book.writer|title }}</a>
+                </div>
+                <div class="mt-4">
+                    <h3>Année de sortie :</h3>
+                    {% if book.releasedYear %}
+                        <p>{{ book.releasedYear }}</p>
+                    {% else %}
+                        <p>Donnée non renseignée...</p>
+                    {% endif %}
+                </div>
+                <div>
+                    <h3>Genre</h3>
+                    {% if book.genre %}
+                        <p>{{ book.genre|title }}</p>
+                    {% else %}
+                        <p>Donnée non renseignée...</p>
+                    {% endif %}
+                </div>
+                <div class="mt-4">
+                    <h3>Résumé :</h3>
+                    {% if book.synopsis %}
+                        <p>{{ book.synopsis }}</p>
+                    {% else %}
+                        <p>Donnée non renseignée...</p>
+                    {% endif %}
+                </div>
+                <div class="mt-4">
+                    <h3>Nombre de pages :</h3>
+                    {% if book.nbPages %}
+                        <p>{{ book.nbPages }}</p>
+                    {% else %}
+                        <p>Donnée non renseignée...</p>
+                    {% endif %}
+                </div>
             </div>
+            
             <div class="mt-4">
-                <h3>Année de sortie :</h3>
-                {% if book.releasedYear %}
-                    <p>{{ book.releasedYear }}</p>
-                {% else %}
-                    <p>Donnée non renseignée...</p>
-                {% endif %}
-            </div>
-            <div class="mt-4">
-                <h3>Résumé :</h3>
-                {% if book.synopsis %}
-                    <p>{{ book.synopsis}}</p>
-                {% else %}
-                    <p>Donnée non renseignée...</p>
-                {% endif %}
-            </div>
-            <div class="mt-4">
-                <h3>Nombre de pages :</h3>
-                {% if book.nbPages %}
-                    <p>{{ book.nbPages}}</p>
-                {% else %}
-                    <p>Donnée non renseignée...</p>
-                {% endif %}
+            {% if book.bookCover %}
+                <img src="{{ book.bookCover }}" class="bookImg" alt="Photo de {{ book.title }}">
+            {% else %}
+                <img src="{{ asset('asset/img/bookDefault.png') }}" alt="Photo de {{ book.title }}" class="fakeImg">
+            {% endif %}
             </div>
         </div>
-        
-        <div class="mt-4">
-        {% if book.bookCover %}
-            <img src="{{ book.bookCover }}" class="bookImg" alt="Photo de {{ book.title }}">
-        {% else %}
-            <img src="{{ asset('asset/img/bookDefault.png') }}" alt="Photo de {{ book.title }}" class="fakeImg">
-        {% endif %}
+
+        <div class="mt-5">
+            <h2 class="mb-3">Dans le même genre:</h2>
+            {% for allBook in allBooks %}
+            <div class="similarBooks">
+                {% if allBook.genre|title is same as(book.genre|title) and allBook.title is not same as(book.title) %}
+                    {% if allBook.bookCover %}
+                        <img src="{{ allBook.bookCover }}" alt="image du livre {{ allBook.title|title }}" class="bookImgSimilar">
+                    {% else %}
+                        <img src="{{ asset('asset/img/bookDefault.png') }}" alt="Photo de {{ book.title }}" class="fakeImg">
+                    {% endif %}
+                    <p><a href="{{ path('app_book_show', {'id': allBook.id}) }}">{{ allBook.title|title }}</a></p>
+                {% endif %}
+            </div>
+            {% endfor %}
+
         </div>
     </main>
 

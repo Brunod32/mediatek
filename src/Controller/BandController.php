@@ -42,7 +42,7 @@ class BandController extends AbstractController
     #[Route('/band/{id}', name: 'app_band_show', methods: ['GET'])]
     public function show(Band $band, BandRepository $bandRepository): Response
     {
-
+        // Afficher les groupes du même genre de métal que la page du groupe
         $kindOfMetalParam = $band->getKindOfMetal();
         $allBands = $bandRepository->findAll();
         

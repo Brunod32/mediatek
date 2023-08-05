@@ -30,6 +30,7 @@ class BookType extends AbstractType
                 'expanded' => false,
             ])
             ->add('releasedYear', TextType::class)
+            ->add('genre', TextType::class)
         ;
     }
 

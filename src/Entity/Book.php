@@ -35,6 +35,9 @@ class Book
     #[ORM\Column(nullable: true)]
     private ?int $releasedYear = null;
 
+    #[ORM\Column(length: 20, nullable: true)]
+    private ?string $genre = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -108,6 +111,18 @@ class Book
     public function setReleasedYear(?int $releasedYear): static
     {
         $this->releasedYear = $releasedYear;
+
+        return $this;
+    }
+
+    public function getGenre(): ?string
+    {
+        return $this->genre;
+    }
+
+    public function setGenre(?string $genre): static
+    {
+        $this->genre = $genre;
 
         return $this;
     }
