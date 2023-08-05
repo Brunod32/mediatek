@@ -35,7 +35,7 @@ class Band
 
     #[ORM\OneToMany(mappedBy: 'band', targetEntity: Album::class)]
     // Permet d'afficher la liste des albums par ordre chronologique
-    #[ORM\OrderBy(["realesedYear" => "ASC"])]
+    #[ORM\OrderBy(["releasedYear" => "ASC"])]
     private Collection $albums;
 
     public function __construct()

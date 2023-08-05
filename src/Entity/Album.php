@@ -20,7 +20,7 @@ class Album
     private ?string $title = null;
 
     #[ORM\Column(nullable: true)]
-    private ?int $realesedYear = null;
+    private ?int $releasedYear = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $albumCover = null;
@@ -51,14 +51,14 @@ class Album
         return $this;
     }
 
-    public function getRealesedYear(): ?int
+    public function getReleasedYear(): ?int
     {
-        return $this->realesedYear;
+        return $this->releasedYear;
     }
 
-    public function setRealesedYear(int $realesedYear): static
+    public function setReleasedYear(int $releasedYear): static
     {
-        $this->realesedYear = $realesedYear;
+        $this->releasedYear = $releasedYear;
 
         return $this;
     }

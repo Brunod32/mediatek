@@ -16,7 +16,7 @@ class AlbumType extends AbstractType
     {
         $builder
             ->add('title', TextType::class)
-            ->add('realesedYear', TextType::class)
+            ->add('releasedYear', TextType::class)
             ->add('albumCover', TextType::class, [
                 'required' => false,
             ])

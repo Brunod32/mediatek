@@ -52,7 +52,7 @@
                     {% if band.albums %}
                         {% for albums in band.albums %}
                             <ul>
-                                <li><a href="{{ path('app_album_show', {'id': albums.id }) }}">{{ albums.title|title }}</a>, {{ albums.realesedYear}}</li>
+                                <li><a href="{{ path('app_album_show', {'id': albums.id }) }}">{{ albums.title|title }}</a>, {{ albums.releasedYear}}</li>
                             </ul>
                         {% else %}
                             <p>Donnée non renseignée...</p>
@@ -72,7 +72,7 @@
         </div>
 
         <div class="mt-5 similarBandsDiv">
-            <h2>Vous aimerez peut-être:</h2>
+            <h2 class="mb-3">Vous aimerez peut-être:</h2>
             {% for allBand in allBands %}
             <div class="similarBands">
                 {% if allBand.kindOfMetal is same as(bandKindOfMetal) and allBand.name is not same as(band.name) %}

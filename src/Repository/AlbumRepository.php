@@ -57,7 +57,7 @@ class AlbumRepository extends ServiceEntityRepository
 
     public function sortAlbumsByReleasedYear()
     {
-        return $this->findBy(array(), array('realesedYear' => 'DESC'));
+        return $this->findBy(array(), array('releasedYear' => 'DESC'));
     }
 
 //    /**

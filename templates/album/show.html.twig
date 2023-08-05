@@ -23,8 +23,8 @@
             <a href="{{ path('app_band_show', {'id': album.band.id}) }}">{{ album.band }}</a>
 
             <h3 class="mt-5">Année de sortie</h3>
-            {% if album.realesedYear %}
-                <p>{{ album.realesedYear }}</p>
+            {% if album.releasedYear %}
+                <p>{{ album.releasedYear }}</p>
             {% else %}
                 <p>Donnée non renseignée...</p>
             {% endif %}
@@ -32,7 +32,7 @@
 
         <div>
         {% if album.albumCover %}
-            <img src="{{ album.albumCover }}" class="cdImg" alt="Pochette du CD">
+            <img src="{{ album.albumCover }}" class="cdImg" alt="Pochette de l'album {{ album.title|title }}">
         {% else %}
             <img src="{{ asset('asset/img/cdDefault.jpg') }}" class="cdImg" alt="Pochette du CD">
         {% endif %}
