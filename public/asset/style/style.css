@@ -191,6 +191,32 @@ input {
   text-align: center;
 }
 
+.containerBand,
+.containerAlbum,
+.containerBook,
+.containerWriter {
+  display: flex;
+  flex-wrap: wrap;
+}
+.containerBand .cardBand,
+.containerBand .cardAlbum,
+.containerBand .cardBook,
+.containerBand .cardWriter,
+.containerAlbum .cardBand,
+.containerAlbum .cardAlbum,
+.containerAlbum .cardBook,
+.containerAlbum .cardWriter,
+.containerBook .cardBand,
+.containerBook .cardAlbum,
+.containerBook .cardBook,
+.containerBook .cardWriter,
+.containerWriter .cardBand,
+.containerWriter .cardAlbum,
+.containerWriter .cardBook,
+.containerWriter .cardWriter {
+  margin-bottom: 10px;
+}
+
 @media screen and (min-width: 800px) {
   main {
     display: flex;

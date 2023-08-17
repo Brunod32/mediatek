@@ -11,9 +11,9 @@
         {% endif %}
     </header>
     
-    <main class="container">
+    <main class="container containerAlbum">
     {% for album in albums %}
-        <div class="card" style="max-width: 24rem;">
+        <div class="card cardAlbum" style="max-width: 24rem;">
             {% if album.albumCover %}
                 <img src="{{ album.albumCover }}" title="{{ album.title }}" class="card-img-top" alt="Image de {{ album.title }}">
             {% else %} 

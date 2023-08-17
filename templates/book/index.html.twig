@@ -11,9 +11,9 @@
         {% endif %}
     </header>
     
-    <main class="container">
+    <main class="container containerBook">
     {% for book in books %}
-        <div class="card" style="max-width: 24rem;">
+        <div class="card cardBook" style="max-width: 24rem;">
             {% if book.bookCover %}
                 <img src="{{ book.bookCover }}" title="{{ book.title }}" class="card-img-top" alt="Image de {{ book.title }}">
             {% else %} 
