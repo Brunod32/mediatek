@@ -2,11 +2,16 @@ body
     background-color: #3c4043
     font-family: Roboto, 'Segoe UI', Tahoma, sans-serif
     color: white
-    font-size: 26px
+    font-size: 32px
+
+.nav
+    display: flex
+    margin: auto
+    font-size: 34px
 
 .navbarEnd
     display: flex
-    flex-direction: row-reverse
+    justify-content: flex-end
 
 .nav-link
     color: red
@@ -76,6 +81,7 @@ i
 .card
     background-color: #828283
     width: 150px
+    margin: 10px
 
 .card-title
     color: white
@@ -180,7 +186,7 @@ input
     background-color: red
 
 
-@media screen and (min-width:800px)
+@media screen and (min-width:992px)
     body
         font-size: 16px
     
@@ -208,9 +214,10 @@ input
         display: flex
         flex-direction: row
 
-    navbar
+    header .nav
         display: flex
-        flex-direction: column
+        margin: 0
+        font-size: 20px
 
     .accountContainer
         display: flex
@@ -219,3 +226,4 @@ input
     .containerValidatedPwd
         display: flex
         flex-direction: column
+        
