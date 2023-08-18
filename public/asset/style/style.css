@@ -2,7 +2,7 @@ body {
   background-color: #3c4043;
   font-family: Roboto, "Segoe UI", Tahoma, sans-serif;
   color: white;
-  font-size: 20px;
+  font-size: 26px;
 }
 
 .navbarEnd {
@@ -222,7 +222,18 @@ input {
   margin-bottom: 10px;
 }
 
+/* Button back to top */
+#scroll-top-btn {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-color: red;
+}
+
 @media screen and (min-width: 800px) {
+  body {
+    font-size: 16px;
+  }
   main {
     display: flex;
     flex-direction: row;

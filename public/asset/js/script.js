@@ -7,15 +7,15 @@ const togglePwd = () => {
     eyeSlashIcon.classList.contains("d-none") ? eyeSlashIcon.classList.remove("d-none") : eyeSlashIcon.classList.add("d-none");
 }
 
-let albums = [];
-fetch('https://127.0.0.1:8000/api/albums')
-    .then(response => response.json())
-    .then(dataAlbums => {
-        Object.values(dataAlbums["hydra:member"]).forEach(val => {
-            console.log(val);
-            console.log(val.title);
-        })
+// let albums = [];
+// fetch('https://127.0.0.1:8000/api/albums')
+//     .then(response => response.json())
+//     .then(dataAlbums => {
+//         Object.values(dataAlbums["hydra:member"]).forEach(val => {
+//             console.log(val);
+//             console.log(val.title);
+//         })
 
-        //console.log(dataAlbums["hydra:member"][0].title)
-        //return data["hydra:member"]
-    })
+//         //console.log(dataAlbums["hydra:member"][0].title)
+//         //return data["hydra:member"]
+//     })
