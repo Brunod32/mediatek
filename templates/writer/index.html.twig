@@ -13,7 +13,7 @@
 
     <main class="container containerWriter">
     {% for writer in writers %}
-        <div class="card cardWriter" style="max-width: 24rem;">
+        <div class="card cardWriter">
             {% if writer.picture %}
                 <img src="{{ writer.picture }}" title="{{ writer.lastname }}" class="card-img-top" alt="Image de {{ writer.lastname }}">
             {% else %} 

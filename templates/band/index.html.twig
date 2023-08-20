@@ -13,7 +13,7 @@
     
     <main class="container containerBand">
     {% for band in bands %}
-        <div class="card cardBand" style="max-width: 24rem;">
+        <div class="card cardBand">
             {% if band.picture %}
                 <img src="{{ band.picture }}" title="{{ band.name }}" class="card-img-top" alt="Image de {{ band.name }}">
             {% else %} 

@@ -11,7 +11,7 @@ body
 
 .navbarEnd
     display: flex
-    justify-content: flex-end
+    justify-content: center
 
 .nav-link
     color: red
@@ -78,10 +78,10 @@ i
     border: none
     color: red
 
-.card
+.cardMenu
     background-color: #828283
-    width: 150px
-    margin: 10px
+    width: 30rem
+    margin: 25px
 
 .card-title
     color: white
@@ -92,15 +92,13 @@ a
 
 .formInForm
     padding-right: 100px
+    width: 40rem
 
 .fakeImg
     height: 100px
 
 .fakeImgBand
     height: 200px
-
-.card
-    width: 200px
 
 .bandImg,
 .cdImg,
@@ -128,7 +126,7 @@ header form
     justify-content: center
     margin: 20px
 
-input
+.search
     border-radius: 30px
     padding-left: 16px
 
@@ -177,6 +175,8 @@ input
     .cardBook,
     .cardWriter
         margin-bottom: 10px
+        background-color: #828283
+        width: 30rem
 
 /* Button back to top */
 #scroll-top-btn
@@ -190,6 +190,29 @@ input
     body
         font-size: 16px
     
+    .navbarEnd
+        display: flex
+        justify-content: flex-end
+
+    .card
+        width: 200px
+        background-color: #828283
+
+    .containerBand,
+    .containerAlbum,
+    .containerBook,
+    .containerWriter
+        display: flex
+        flex-wrap: wrap
+
+        .cardBand,
+        .cardAlbum,
+        .cardBook,
+        .cardWriter
+            margin-bottom: 10px
+            background-color: #828283
+            width: 10rem
+
     main
         display: flex
         flex-direction: row
@@ -226,4 +249,8 @@ input
     .containerValidatedPwd
         display: flex
         flex-direction: column
+
+    .formInForm
+        padding-right: 100px
+        width: 30rem
         

@@ -13,7 +13,7 @@ body {
 
 .navbarEnd {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .nav-link {
@@ -95,10 +95,10 @@ i {
   color: red;
 }
 
-.card {
+.cardMenu {
   background-color: #828283;
-  width: 150px;
-  margin: 10px;
+  width: 30rem;
+  margin: 25px;
 }
 
 .card-title {
@@ -112,6 +112,7 @@ a {
 
 .formInForm {
   padding-right: 100px;
+  width: 40rem;
 }
 
 .fakeImg {
@@ -120,10 +121,6 @@ a {
 
 .fakeImgBand {
   height: 200px;
-}
-
-.card {
-  width: 200px;
 }
 
 .bandImg,
@@ -157,7 +154,7 @@ header form {
   margin: 20px;
 }
 
-input {
+.search {
   border-radius: 30px;
   padding-left: 16px;
 }
@@ -227,6 +224,8 @@ input {
 .containerWriter .cardBook,
 .containerWriter .cardWriter {
   margin-bottom: 10px;
+  background-color: #828283;
+  width: 30rem;
 }
 
 /* Button back to top */
@@ -240,6 +239,41 @@ input {
 @media screen and (min-width: 992px) {
   body {
     font-size: 16px;
+  }
+  .navbarEnd {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .card {
+    width: 200px;
+    background-color: #828283;
+  }
+  .containerBand,
+  .containerAlbum,
+  .containerBook,
+  .containerWriter {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .containerBand .cardBand,
+  .containerBand .cardAlbum,
+  .containerBand .cardBook,
+  .containerBand .cardWriter,
+  .containerAlbum .cardBand,
+  .containerAlbum .cardAlbum,
+  .containerAlbum .cardBook,
+  .containerAlbum .cardWriter,
+  .containerBook .cardBand,
+  .containerBook .cardAlbum,
+  .containerBook .cardBook,
+  .containerBook .cardWriter,
+  .containerWriter .cardBand,
+  .containerWriter .cardAlbum,
+  .containerWriter .cardBook,
+  .containerWriter .cardWriter {
+    margin-bottom: 10px;
+    background-color: #828283;
+    width: 10rem;
   }
   main {
     display: flex;
@@ -277,5 +311,9 @@ input {
   .containerValidatedPwd {
     display: flex;
     flex-direction: column;
+  }
+  .formInForm {
+    padding-right: 100px;
+    width: 30rem;
   }
 }/*# sourceMappingURL=style.css.map */
