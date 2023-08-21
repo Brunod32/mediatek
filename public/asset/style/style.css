@@ -58,7 +58,7 @@ main {
 }
 
 .imgHome {
-  width: 300px;
+  width: 250px;
   margin-bottom: 40px;
 }
 
@@ -97,7 +97,7 @@ i {
 
 .cardMenu {
   background-color: #828283;
-  width: 24rem;
+  width: 20rem;
   margin: 25px;
 }
 
@@ -225,7 +225,7 @@ header form {
 .containerWriter .cardWriter {
   margin-bottom: 10px;
   background-color: #828283;
-  width: 24rem;
+  width: 20rem;
 }
 
 /* Button back to top */
