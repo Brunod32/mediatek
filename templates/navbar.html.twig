@@ -1,19 +1,17 @@
 <div class="container" id="top">
     <header id="nav" class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-
         <ul class="nav col-6 col-md-auto justify-content-center">
             <li><a href="{{ path('app_home') }}" class="nav-link px-2">Accueil</a></li>
             <li><a href="{{ path('app_reading') }}" class="nav-link px-2">Bibliothèque</a></li>
             <li><a href="{{ path('app_music') }}" class="nav-link px-2">CDthèque</a></li>
         </ul>
 
-        <form action="{{ path('search-result')}}">
-            <input name="search" id="search" class="search" type="text" placeholder="Rechercher" title="Rechercher">
-            <button type="submit" id="go" title="Go"><i class="bi bi-search"></i></button>
-        </form>
-        
-        <div class="col-md-3 text-end navbarEnd">   
-           <div id="btn-log">
+        <div class="nav">
+            <form action="{{ path('search-result')}}" class="searchForm">
+                <input name="search" id="search" class="search" type="text" placeholder="Rechercher" title="Rechercher">
+                <button type="submit" id="go" title="Go"><i class="bi bi-search"></i></button>
+            </form>
+            <div id="btn-log">
                 {% if not app.user %}
                     <a href="{{ path('app_login') }}" type="button" class="btn btn-outline-primary me-2 px-2"><i class="bi bi-box-arrow-in-right"></i></a>
                 {% endif %}
@@ -21,7 +19,7 @@
                     <a href="{{ path('app_account') }}" type="button" class="btn btn-outline-primary me-2 px-2"><i class="bi bi-person-vcard"></i></a>
                     <a href="{{ path('app_logout') }}" type="button" class="btn btn-outline-primary me-2 px-2"><i class="bi bi-box-arrow-in-left"></i></a>
                 {% endif %}
-           </div>
+            </div>
         </div>
     </header>
   </div>

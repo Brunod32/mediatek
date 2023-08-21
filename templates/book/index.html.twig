@@ -13,17 +13,18 @@
     
     <main class="container containerBook">
     {% for book in books %}
-        <div class="card cardBook">
-            {% if book.bookCover %}
-                <img src="{{ book.bookCover }}" title="{{ book.title }}" class="card-img-top" alt="Image de {{ book.title }}">
-            {% else %} 
-                <img src="{{ asset('asset/img/bookDefault.png') }}" title="Image de livres" class="card-img-top" alt="Couverture de {{ book.title }}">
-            {% endif %}
-            <div class="card-body text-center">
-                <a href="{{ path('app_book_show', {'id': book.id}) }}"><h5 class="card-title">{{ book.title|title }}</h5></a>
-            
+        <a href="{{ path('app_book_show', {'id': book.id}) }}">
+            <div class="card cardBook">
+                {% if book.bookCover %}
+                    <img src="{{ book.bookCover }}" title="{{ book.title }}" class="card-img-top" alt="Image de {{ book.title }}">
+                {% else %} 
+                    <img src="{{ asset('asset/img/bookDefault.png') }}" title="Image de livres" class="card-img-top" alt="Couverture de {{ book.title }}">
+                {% endif %}
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ book.title|title }}</h5>
+                </div>
             </div>
-        </div>
+        </a>
         {% else %}
             <p class="text-center">Aucun livre trouvé...</p>
         {% endfor %}
