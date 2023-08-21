@@ -59,7 +59,7 @@ main {
 
 .imgHome {
   width: 250px;
-  margin-bottom: 40px;
+  margin-top: 100px;
 }
 
 i {
@@ -97,7 +97,7 @@ i {
 
 .cardMenu {
   background-color: #828283;
-  width: 20rem;
+  width: 18rem;
   margin: 25px;
 }
 
@@ -223,9 +223,9 @@ header form {
 .containerWriter .cardAlbum,
 .containerWriter .cardBook,
 .containerWriter .cardWriter {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   background-color: #828283;
-  width: 20rem;
+  width: 18rem;
 }
 
 /* Button back to top */
