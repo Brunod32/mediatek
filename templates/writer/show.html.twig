@@ -19,7 +19,7 @@
     
     <main id="writerPage">
         <div id="writerInfos">
-            <div class="my-4">
+            <div class="my-4 mx-4">
                 {% if writer.picture %}
                     <img src="{{ writer.picture }}" class="writerImg" alt="Photo de {{ writer.firstname ~ ' ' ~ writer.lastname }}">
                 {% else %}
@@ -47,4 +47,5 @@
             </div>
         </div>
     </main>    
+
 {% endblock %}
