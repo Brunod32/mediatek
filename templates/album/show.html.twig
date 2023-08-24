@@ -17,12 +17,12 @@
         {% endif %}
     </header>
 
-    <main>
+    <main id="entityInfos">
         <div>
             {% if album.albumCover %}
-                <img src="{{ album.albumCover }}" class="cdImg" alt="Pochette de l'album {{ album.title|title }}">
+                <img src="{{ album.albumCover }}" class="entityImg" alt="Pochette de l'album {{ album.title|title }}">
             {% else %}
-                <img src="{{ asset('asset/img/cdDefault.jpg') }}" class="cdImg" alt="Pochette du CD">
+                <img src="{{ asset('asset/img/cdDefault.jpg') }}" class="entityImg" alt="Pochette du CD">
             {% endif %}
         </div>
         <div>
@@ -36,9 +36,5 @@
                 <p>Donnée non renseignée...</p>
             {% endif %}
         </div>
-
-        
     </main>
-
-    
 {% endblock %}

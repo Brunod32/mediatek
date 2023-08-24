@@ -19,12 +19,12 @@
     
 
     <main id="bookPage">
-        <div id="bookInfos">
+        <div id="entityInfos">
             <div class="my-4">
                 {% if book.bookCover %}
-                    <img src="{{ book.bookCover }}" class="bookImg" alt="Photo de {{ book.title }}">
+                    <img src="{{ book.bookCover }}" class="entityImg" alt="Photo de {{ book.title }}">
                 {% else %}
-                    <img src="{{ asset('asset/img/bookDefault.png') }}" alt="Photo de {{ book.title }}" class="fakeImg">
+                    <img src="{{ asset('asset/img/bookDefault.png') }}" alt="Photo de {{ book.title }}" class="entityImg">
             {% endif %}
             </div>
             <div>

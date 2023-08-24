@@ -18,12 +18,12 @@
     </header>
 
     <main id="bandPage">
-        <div id="bandInfos">
+        <div id="entityInfos">
             <div>
                 {% if band.picture %}
-                    <img src="{{ band.picture }}" class="bandImg" alt="image du groupe">
+                    <img src="{{ band.picture }}" class="entityImg" alt="image du groupe">
                 {% else %}
-                    <img src="{{ asset('asset/img/bandDefault.jpg') }}" alt="image du groupe" class="fakeImgBand">
+                    <img src="{{ asset('asset/img/bandDefault.jpg') }}" alt="image du groupe" class="entityImg">
                 {% endif %}
             </div>
             <div id="bandInfosText">

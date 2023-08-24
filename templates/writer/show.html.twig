@@ -18,12 +18,12 @@
     </header>
     
     <main id="writerPage">
-        <div id="writerInfos">
+        <div id="entityInfos">
             <div class="my-4 mx-4">
                 {% if writer.picture %}
-                    <img src="{{ writer.picture }}" class="writerImg" alt="Photo de {{ writer.firstname ~ ' ' ~ writer.lastname }}">
+                    <img src="{{ writer.picture }}" class="entityImg" alt="Photo de {{ writer.firstname ~ ' ' ~ writer.lastname }}">
                 {% else %}
-                    <img src="{{ asset('asset/img/writerDefault.png') }}" alt="Image de remplacement de l'auteur" class="fakeImgWriter">
+                    <img src="{{ asset('asset/img/writerDefault.png') }}" alt="Image de remplacement de l'auteur" class="entityImg">
                 {% endif %}
             </div>
             <div>

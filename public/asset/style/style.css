@@ -124,21 +124,21 @@ a {
     width: 18rem;
 }
 
-.fakeImg {
-    height: 100px;
+.containerEntity {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.fakeImgBand,
-.fakeImgBook,
-.fakeImgWriter,
-.fakeImgAlbum {
-    height: 200px;
+.cardBand,
+.cardAlbum,
+.cardBook,
+.cardWriter {
+    margin-bottom: 20px;
+    background-color: #828283;
+    width: 18rem;
 }
 
-.bandImg,
-.bookImg,
-.cdImg,
-.writerImg {
+.entityImg {
     width: 200px;
     height: 200px;
     object-fit: contain;
@@ -151,7 +151,7 @@ a {
     align-items: center;
 }
 
-#bandInfos {
+#entityInfos {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -172,6 +172,7 @@ header form {
     display: flex;
 }
 
+/* search bar */
 .searchForm {
     margin: auto;
 }
@@ -209,6 +210,7 @@ header form {
     width: 25%;
 }
 
+/* pwd update */
 .pwdLinkUpdate {
     color: white;
 }
@@ -221,34 +223,6 @@ header form {
 .validatedPwdMessage {
     font-size: 32px;
     text-align: center;
-}
-
-.containerBand,
-.containerAlbum,
-.containerBook,
-.containerWriter {
-    display: flex;
-    flex-wrap: wrap;
-}
-.containerBand .cardBand,
-.containerBand .cardAlbum,
-.containerBand .cardBook,
-.containerBand .cardWriter,
-.containerAlbum .cardBand,
-.containerAlbum .cardAlbum,
-.containerAlbum .cardBook,
-.containerAlbum .cardWriter,
-.containerBook .cardBand,
-.containerBook .cardAlbum,
-.containerBook .cardBook,
-.containerBook .cardWriter,
-.containerWriter .cardBand,
-.containerWriter .cardAlbum,
-.containerWriter .cardBook,
-.containerWriter .cardWriter {
-    margin-bottom: 20px;
-    background-color: #828283;
-    width: 18rem;
 }
 
 /* Button back to top */
@@ -274,30 +248,15 @@ header form {
         background-color: #828283;
     }
 
-    .containerBand,
-    .containerAlbum,
-    .containerBook,
-    .containerWriter {
+    .containerEntity {
         display: flex;
         flex-wrap: wrap;
     }
 
-    .containerBand .cardBand,
-    .containerBand .cardAlbum,
-    .containerBand .cardBook,
-    .containerBand .cardWriter,
-    .containerAlbum .cardBand,
-    .containerAlbum .cardAlbum,
-    .containerAlbum .cardBook,
-    .containerAlbum .cardWriter,
-    .containerBook .cardBand,
-    .containerBook .cardAlbum,
-    .containerBook .cardBook,
-    .containerBook .cardWriter,
-    .containerWriter .cardBand,
-    .containerWriter .cardAlbum,
-    .containerWriter .cardBook,
-    .containerWriter .cardWriter {
+    .cardBand,
+    .cardAlbum,
+    .cardBook,
+    .cardWriter {
         margin-bottom: 10px;
         background-color: #828283;
         width: 10rem;
@@ -314,18 +273,12 @@ header form {
         flex-direction: column;
     }
 
-    #bandInfos,
-    #bookInfos,
-    #writerInfos {
+    #entityInfos {
         display: flex;
         flex-direction: row;
     }
 
-    .bandImg,
-    .bookImg,
-    .fakeImgBand,
-    .fakeImgWriter,
-    .fakeImg {
+    .entityImg {
         width: 400px;
         margin-right: 80px;
     }

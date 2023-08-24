@@ -11,7 +11,7 @@
         {% endif %}
     </header>
     
-    <main class="container containerBook">
+    <main class="container containerEntity">
     {% for book in books %}
         <a href="{{ path('app_book_show', {'id': book.id}) }}">
             <div class="card cardBook">
