@@ -20,6 +20,13 @@
 
     <main id="bookPage">
         <div id="bookInfos">
+            <div class="my-4">
+                {% if book.bookCover %}
+                    <img src="{{ book.bookCover }}" class="bookImg" alt="Photo de {{ book.title }}">
+                {% else %}
+                    <img src="{{ asset('asset/img/bookDefault.png') }}" alt="Photo de {{ book.title }}" class="fakeImg">
+            {% endif %}
+            </div>
             <div>
                 <div class="mt-4">
                     <h3>Auteur :</h3>
@@ -59,13 +66,13 @@
                 </div>
             </div>
             
-            <div class="mt-4">
+            {# <div class="mt-4">
             {% if book.bookCover %}
                 <img src="{{ book.bookCover }}" class="bookImg" alt="Photo de {{ book.title }}">
             {% else %}
                 <img src="{{ asset('asset/img/bookDefault.png') }}" alt="Photo de {{ book.title }}" class="fakeImg">
             {% endif %}
-            </div>
+            </div> #}
         </div>
 
         <div class="mt-5">

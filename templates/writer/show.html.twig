@@ -17,39 +17,35 @@
         {% endif %} 
     </header>
     
-    <main>
-        <div>
-            
-            
+    <main id="writerPage">
+        <div id="writerInfos">
             <div class="mt-4">
-                <h3>Pays :</h3>
-                <p>{{ writer.country|capitalize}}</p>
-            </div>
-
-            <div class="mt-4">
-                <h3>Bibliographie :</h3>
-                {% if writer.books %}
-                    {% for books in writer.books %}
-                            <ul>
-                                <li><a href="{{ path('app_book_show', {'id': books.id }) }}">{{ books.title|title }}</a></li>
-                            </ul>
-                        {% else %}
-                            <p>Donnée non renseignée... </p>
-                    {% endfor %}
+                {% if writer.picture %}
+                    <img src="{{ writer.picture }}" class="writerImg" alt="Photo de {{ writer.firstname ~ ' ' ~ writer.lastname }}">
+                {% else %}
+                    <img src="{{ asset('asset/img/writerDefault.png') }}" alt="Image de remplacement de l'auteur" class="fakeImgWriter">
                 {% endif %}
             </div>
-        </div>
+            <div>
+                <div class="mt-4">
+                    <h3>Pays :</h3>
+                    <p>{{ writer.country|capitalize}}</p>
+                </div>
 
-        <div class="mt-4">
-        {% if writer.picture %}
-            <img src="{{ writer.picture }}" class="writerImg" alt="Photo de {{ writer.firstname ~ ' ' ~ writer.lastname }}">
-        {% else %}
-            <img src="{{ asset('asset/img/writerDefault.png') }}" alt="Image de remplacement de l'auteur" class="fakeImg">
-        {% endif %}
+                <div class="mt-4">
+                    <h3>Bibliographie :</h3>
+                    {% if writer.books %}
+                        {% for books in writer.books %}
+                                <ul>
+                                    <li><a href="{{ path('app_book_show', {'id': books.id }) }}">{{ books.title|title }}</a></li>
+                                </ul>
+                            {% else %}
+                                <p>Donnée non renseignée... </p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
         </div>
-
     </main>    
-    
 
-    
 {% endblock %}

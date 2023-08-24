@@ -5,6 +5,13 @@ body {
   font-size: 28px;
 }
 
+/* homePage */
+.imgHome {
+  width: 250px;
+  margin-top: 100px;
+}
+
+/* navbar */
 .nav {
   display: flex;
   margin: auto;
@@ -32,12 +39,35 @@ a:hover {
   margin: auto;
 }
 
+#btn-log {
+  margin: auto;
+}
+
+#btn-log a {
+  border: none;
+  align-self: center;
+  color: red;
+}
+
+.btnDelete {
+  background-color: #3c4043;
+  border: none;
+  color: red;
+}
+
 #btn-log a:hover,
 .bi-box-arrow-in-right:hover,
 .bi-box-arrow-in-left:hover {
   background-color: #828283;
 }
 
+/* login page */
+#eye,
+#eye-slash {
+  font-size: 20px;
+}
+
+/* general */
 h1 {
   text-align: center;
   margin-top: 50px;
@@ -54,21 +84,11 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
-}
-
-.imgHome {
-  width: 250px;
-  margin-top: 100px;
+  margin-top: 25px;
 }
 
 i {
   font-size: 32px;
-}
-
-#eye,
-#eye-slash {
-  font-size: 20px;
 }
 
 .bi-backspace-fill {
@@ -77,22 +97,6 @@ i {
 
 .bi-pencil-square {
   color: skyblue;
-}
-
-#btn-log {
-  margin: auto;
-}
-
-#btn-log a {
-  border: none;
-  align-self: center;
-  color: red;
-}
-
-.btnDelete {
-  background-color: #3c4043;
-  border: none;
-  color: red;
 }
 
 .cardMenu {
@@ -123,18 +127,23 @@ a {
   height: 100px;
 }
 
-.fakeImgBand {
+.fakeImgBand,
+.fakeImgBook,
+.fakeImgWriter,
+.fakeImgAlbum {
   height: 200px;
 }
 
 .bandImg,
+.bookImg,
 .cdImg,
 .writerImg,
 .bookImg {
-  width: 400px;
-  margin-top: 25px;
+  width: 200px;
 }
 
+#bandInfos,
+#writerInfos,
 .similarBands,
 .similarBooks {
   display: flex;
@@ -146,7 +155,8 @@ a {
   width: 75%;
 }
 
-.bandImgSimilar {
+.bandImgSimilar,
+.bookImgSimilar {
   width: 150px;
   height: 150px;
   -o-object-fit: contain;
@@ -293,10 +303,15 @@ header form {
     flex-direction: column;
   }
   #bandInfos,
-  #bookInfos {
+  #bookInfos,
+  #writerInfos {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: row-reverse;
+  }
+  .bandImg,
+  .bookImg {
+    width: 400px;
+    margin-left: 80px;
   }
   .similarBands,
   .similarBooks {
