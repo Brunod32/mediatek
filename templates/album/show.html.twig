@@ -19,10 +19,17 @@
 
     <main>
         <div>
-            <h3>Interprète</h3>
+            {% if album.albumCover %}
+                <img src="{{ album.albumCover }}" class="cdImg" alt="Pochette de l'album {{ album.title|title }}">
+            {% else %}
+                <img src="{{ asset('asset/img/cdDefault.jpg') }}" class="cdImg" alt="Pochette du CD">
+            {% endif %}
+        </div>
+        <div>
+            <h3 class="mt-5">Interprète</h3>
             <a href="{{ path('app_band_show', {'id': album.band.id}) }}">{{ album.band }}</a>
 
-            <h3 class="mt-5">Année de sortie</h3>
+            <h3 class="mt-3">Année de sortie</h3>
             {% if album.releasedYear %}
                 <p>{{ album.releasedYear }}</p>
             {% else %}
@@ -30,13 +37,6 @@
             {% endif %}
         </div>
 
-        <div>
-        {% if album.albumCover %}
-            <img src="{{ album.albumCover }}" class="cdImg" alt="Pochette de l'album {{ album.title|title }}">
-        {% else %}
-            <img src="{{ asset('asset/img/cdDefault.jpg') }}" class="cdImg" alt="Pochette du CD">
-        {% endif %}
-        </div>
         
     </main>
 

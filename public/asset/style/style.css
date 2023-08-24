@@ -137,9 +137,15 @@ a {
 .bandImg,
 .bookImg,
 .cdImg,
-.writerImg,
-.bookImg {
+.writerImg {
   width: 200px;
+}
+
+#bandPage,
+#bookPage,
+#writerPage {
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
 #bandInfos,
