@@ -1,235 +1,234 @@
 body {
-  background-color: #3c4043;
-  font-family: Roboto, "Segoe UI", Tahoma, sans-serif;
-  color: white;
-  font-size: 20px;
+    background-color: #3c4043;
+    font-family: Roboto, "Segoe UI", Tahoma, sans-serif;
+    color: white;
+    font-size: 20px;
 }
 
 /* homePage */
 .imgHome {
-  width: 250px;
-  margin-top: 100px;
+    width: 250px;
+    margin-top: 100px;
 }
 
 /* navbar */
 .nav {
-  display: flex;
-  margin: auto;
-  font-size: 34px;
+    display: flex;
+    margin: auto;
+    font-size: 34px;
 }
 
 .navbarEnd {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .nav-link {
-  color: red;
+    color: red;
 }
 
 .nav-link:hover,
 a:hover {
-  color: tomato;
+    color: tomato;
 }
 
 .logDiv {
-  display: flex;
+    display: flex;
 }
+
 .logDiv i {
-  margin: auto;
+    margin: auto;
 }
 
 #btn-log {
-  margin: auto;
+    margin: auto;
 }
 
 #btn-log a {
-  border: none;
-  align-self: center;
-  color: red;
+    border: none;
+    align-self: center;
+    color: red;
 }
 
 .btnDelete {
-  background-color: #3c4043;
-  border: none;
-  color: red;
+    background-color: #3c4043;
+    border: none;
+    color: red;
 }
 
 #btn-log a:hover,
 .bi-box-arrow-in-right:hover,
 .bi-box-arrow-in-left:hover {
-  background-color: #828283;
+    background-color: #828283;
 }
 
 /* login page */
 #eye,
 #eye-slash {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 /* general */
 h1 {
-  text-align: center;
-  margin-top: 50px;
-  color: red;
+    text-align: center;
+    margin-top: 50px;
+    color: red;
 }
 
 .dashboard {
-  display: flex;
-  justify-content: space-evenly;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
 }
 
 i {
-  font-size: 32px;
+    font-size: 32px;
 }
 
 .bi-backspace-fill {
-  color: green;
+    color: green;
 }
 
 .bi-pencil-square {
-  color: skyblue;
+    color: skyblue;
 }
 
 .cardMenu {
-  background-color: #828283;
-  width: 18rem;
-  margin: 25px;
+    background-color: #828283;
+    width: 18rem;
+    margin: 25px;
 }
 
 .card-title {
-  color: white;
+    color: white;
 }
 
 a {
-  text-decoration: none;
-  color: red;
+    text-decoration: none;
+    color: red;
 }
 
 .formDiv {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .formInForm {
-  width: 18rem;
+    width: 18rem;
 }
 
 .fakeImg {
-  height: 100px;
+    height: 100px;
 }
 
 .fakeImgBand,
 .fakeImgBook,
 .fakeImgWriter,
 .fakeImgAlbum {
-  height: 200px;
+    height: 200px;
 }
 
 .bandImg,
 .bookImg,
 .cdImg,
 .writerImg {
-  width: 250px;
-  height: 250px;
-  -o-object-fit: contain;
-     object-fit: contain;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
 }
 
 .similarBands,
 .similarBooks {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #bandInfos {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .similarBandsDiv {
-  width: 75%;
+    width: 75%;
 }
 
 .bandImgSimilar,
 .bookImgSimilar {
-  width: 150px;
-  -o-object-fit: contain;
-     object-fit: contain;
+    width: 150px;
+    object-fit: contain;
 }
 
 header form {
-  display: flex;
+    display: flex;
 }
 
 .searchForm {
-  margin: auto;
+    margin: auto;
 }
 
 .search {
-  width: 200px;
-  border-radius: 30px;
-  padding-left: 16px;
+    width: 200px;
+    border-radius: 30px;
+    padding-left: 16px;
 }
 
 #go {
-  background-color: #3c4043;
-  border-radius: 50%;
-  border: none;
-  color: white;
-  margin-left: 10px;
-  font-size: 20px;
+    background-color: #3c4043;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    margin-left: 10px;
+    font-size: 20px;
 }
 
 .bi-search {
-  color: red;
+    color: red;
 }
 
 .container-search {
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
 }
 
 .searchImg {
-  width: 200px;
+    width: 200px;
 }
 
 .searchHr {
-  width: 25%;
+    width: 25%;
 }
 
 .pwdLinkUpdate {
-  color: white;
+    color: white;
 }
 
 .bi-hand-thumbs-up-fill {
-  color: red;
-  margin: 2rem;
+    color: red;
+    margin: 2rem;
 }
 
 .validatedPwdMessage {
-  font-size: 32px;
-  text-align: center;
+    font-size: 32px;
+    text-align: center;
 }
 
 .containerBand,
 .containerAlbum,
 .containerBook,
 .containerWriter {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 .containerBand .cardBand,
 .containerBand .cardAlbum,
@@ -247,107 +246,122 @@ header form {
 .containerWriter .cardAlbum,
 .containerWriter .cardBook,
 .containerWriter .cardWriter {
-  margin-bottom: 20px;
-  background-color: #828283;
-  width: 18rem;
+    margin-bottom: 20px;
+    background-color: #828283;
+    width: 18rem;
 }
 
 /* Button back to top */
 #scroll-top-btn {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  background-color: red;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: red;
 }
 
 @media screen and (min-width: 992px) {
-  body {
-    font-size: 16px;
-  }
-  .navbarEnd {
-    display: flex;
-    justify-content: flex-end;
-  }
-  .card {
-    width: 200px;
-    background-color: #828283;
-  }
-  .containerBand,
-  .containerAlbum,
-  .containerBook,
-  .containerWriter {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .containerBand .cardBand,
-  .containerBand .cardAlbum,
-  .containerBand .cardBook,
-  .containerBand .cardWriter,
-  .containerAlbum .cardBand,
-  .containerAlbum .cardAlbum,
-  .containerAlbum .cardBook,
-  .containerAlbum .cardWriter,
-  .containerBook .cardBand,
-  .containerBook .cardAlbum,
-  .containerBook .cardBook,
-  .containerBook .cardWriter,
-  .containerWriter .cardBand,
-  .containerWriter .cardAlbum,
-  .containerWriter .cardBook,
-  .containerWriter .cardWriter {
-    margin-bottom: 10px;
-    background-color: #828283;
-    width: 10rem;
-  }
-  main {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
-  #bandPage,
-  #bookPage {
-    flex-direction: column;
-  }
-  #bandInfos,
-  #bookInfos,
-  #writerInfos {
-    display: flex;
-    flex-direction: row;
-  }
-  .bandImg,
-  .bookImg,
-  .fakeImgBand,
-  .fakeImgWriter,
-  .fakeImg {
-    margin-right: 80px;
-  }
-  .similarBands,
-  .similarBooks {
-    display: inline-block;
-    text-align: center;
-  }
-  .formDiv {
-    display: flex;
-    flex-direction: row;
-  }
-  header .nav {
-    display: flex;
-    margin: 0;
-    font-size: 20px;
-  }
-  .accountContainer {
-    display: flex;
-    justify-content: flex-start;
-  }
-  .containerValidatedPwd {
-    display: flex;
-    flex-direction: column;
-  }
-  .formInForm {
-    padding-right: 100px;
-    width: 30rem;
-  }
-  .searchForm {
-    margin-right: 0;
-  }
-}/*# sourceMappingURL=style.css.map */
+    body {
+        font-size: 16px;
+    }
+
+    .navbarEnd {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .card {
+        width: 200px;
+        background-color: #828283;
+    }
+
+    .containerBand,
+    .containerAlbum,
+    .containerBook,
+    .containerWriter {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .containerBand .cardBand,
+    .containerBand .cardAlbum,
+    .containerBand .cardBook,
+    .containerBand .cardWriter,
+    .containerAlbum .cardBand,
+    .containerAlbum .cardAlbum,
+    .containerAlbum .cardBook,
+    .containerAlbum .cardWriter,
+    .containerBook .cardBand,
+    .containerBook .cardAlbum,
+    .containerBook .cardBook,
+    .containerBook .cardWriter,
+    .containerWriter .cardBand,
+    .containerWriter .cardAlbum,
+    .containerWriter .cardBook,
+    .containerWriter .cardWriter {
+        margin-bottom: 10px;
+        background-color: #828283;
+        width: 10rem;
+    }
+
+    main {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    #bandPage,
+    #bookPage {
+        flex-direction: column;
+    }
+
+    #bandInfos,
+    #bookInfos,
+    #writerInfos {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .bandImg,
+    .bookImg,
+    .fakeImgBand,
+    .fakeImgWriter,
+    .fakeImg {
+        margin-right: 80px;
+    }
+
+    .similarBands,
+    .similarBooks {
+        display: inline-block;
+        text-align: center;
+    }
+
+    .formDiv {
+        display: flex;
+        flex-direction: row;
+    }
+
+    header .nav {
+        display: flex;
+        margin: 0;
+        font-size: 20px;
+    }
+
+    .accountContainer {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .containerValidatedPwd {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .formInForm {
+        padding-right: 100px;
+        width: 30rem;
+    }
+
+    .searchForm {
+        margin-right: 0;
+    }
+}
