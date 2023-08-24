@@ -138,7 +138,10 @@ a {
 .bookImg,
 .cdImg,
 .writerImg {
-  width: 150px;
+  width: 250px;
+  height: 250px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .similarBands,
@@ -316,7 +319,6 @@ header form {
   .fakeImgBand,
   .fakeImgWriter,
   .fakeImg {
-    width: 400px;
     margin-right: 80px;
   }
   .similarBands,
