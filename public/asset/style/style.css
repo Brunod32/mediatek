@@ -80,7 +80,7 @@ i {
 }
 
 #btn-log {
-  display: flex;
+  margin: auto;
 }
 
 #btn-log a {
@@ -110,8 +110,12 @@ a {
   color: red;
 }
 
+.formDiv {
+  display: flex;
+  flex-direction: column;
+}
+
 .formInForm {
-  padding-right: 100px;
   width: 18rem;
 }
 
@@ -151,6 +155,10 @@ a {
 
 header form {
   display: flex;
+}
+
+.searchForm {
+  margin: auto;
 }
 
 .search {
