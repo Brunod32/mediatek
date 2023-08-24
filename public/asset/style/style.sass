@@ -114,18 +114,19 @@ a
 .bookImg,
 .cdImg,
 .writerImg
-    width: 100px
+    width: 150px
 
-// #bandInfos,
-// #writerInfos,
 .similarBands,
 .similarBooks
         display: flex
         flex-direction: column
         align-items: center
 
-// #bandInfosText
-//     width: 75%
+#bandInfos
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center    
 
 .similarBandsDiv
     width: 75%
@@ -133,7 +134,7 @@ a
 .bandImgSimilar,
 .bookImgSimilar
     width: 150px
-    height: 150px
+    // height: 150px
     object-fit: contain
 
 header form
@@ -242,13 +243,15 @@ header form
     #bookInfos,
     #writerInfos
         display: flex
-        flex-direction: row-reverse
+        flex-direction: row
     
     .bandImg,
-    .bookImg
+    .bookImg,
+    .fakeImgBand,
+    .fakeImgWriter,
+    .fakeImg
         width: 400px
-        margin-left: 80px
-
+        margin-right: 80px
 
     .similarBands,
     .similarBooks
