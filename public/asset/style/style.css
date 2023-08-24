@@ -138,14 +138,7 @@ a {
 .bookImg,
 .cdImg,
 .writerImg {
-  width: 200px;
-}
-
-#bandPage,
-#bookPage,
-#writerPage {
-  margin-left: 25%;
-  margin-right: 25%;
+  width: 150px;
 }
 
 #bandInfos,
@@ -155,6 +148,10 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#bandInfosText {
+  width: 75%;
 }
 
 .similarBandsDiv {
