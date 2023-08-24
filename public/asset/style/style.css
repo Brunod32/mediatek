@@ -2,7 +2,7 @@ body {
   background-color: #3c4043;
   font-family: Roboto, "Segoe UI", Tahoma, sans-serif;
   color: white;
-  font-size: 32px;
+  font-size: 28px;
 }
 
 .nav {
@@ -112,7 +112,7 @@ a {
 
 .formInForm {
   padding-right: 100px;
-  width: 40rem;
+  width: 18rem;
 }
 
 .fakeImg {
