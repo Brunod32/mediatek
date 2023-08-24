@@ -326,6 +326,7 @@ header form {
     .fakeImgBand,
     .fakeImgWriter,
     .fakeImg {
+        width: 400px;
         margin-right: 80px;
     }
 
