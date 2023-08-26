@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Book;
 use App\Entity\Writer;
+use App\Repository\WriterRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -28,6 +29,12 @@ class BookType extends AbstractType
                 'class' => Writer::class,
                 'multiple'=> false,
                 'expanded' => false,
+                // affiche les options du select par ordre alphabétique
+                'query_builder' => function(WriterRepository $writerRepository) {
+                    return $writerRepository
+                        ->createQueryBuilder('w')
+                        ->orderBy('w.lastname', 'ASC');
+                }
             ])
             ->add('releasedYear', TextType::class)
             ->add('genre', TextType::class)
