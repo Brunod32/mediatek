@@ -5,6 +5,17 @@
 {% block body %}
 <header>
     <h1>{{ controller_name }}</h1>
+    <div class="d-flex m-3">
+        <div id="btn-log">
+            {% if not app.user %}
+                <a href="{{ path('app_login') }}" type="button" class="btn btn-outline-primary me-2 px-2"><i class="bi bi-box-arrow-in-right"></i></a>
+            {% endif %}
+            {% if app.user %}
+                <a href="{{ path('app_account') }}" type="button" class="btn btn-outline-primary me-2 px-2"><i class="bi bi-person-vcard"></i></a>
+                <a href="{{ path('app_logout') }}" type="button" class="btn btn-outline-primary me-2 px-2"><i class="bi bi-box-arrow-in-left"></i></a>
+            {% endif %}
+        </div>
+    </div>
 </header>
 
 <main>
