@@ -16,7 +16,6 @@
             </div>
         {% endif %}
     </header>
-    
 
     <main id="bookPage">
         <div id="entityInfos">
@@ -27,7 +26,7 @@
                     <img src="{{ asset('asset/img/bookDefault.png') }}" alt="Photo de {{ book.title }}" class="entityImg">
             {% endif %}
             </div>
-            <div>
+            <div class="mx-5">
                 <div class="mt-4">
                     <h3>Auteur :</h3>
                     <a href="{{ path('app_writer_show', {'id': book.writer.id}) }}">{{ book.writer|title }}</a>
