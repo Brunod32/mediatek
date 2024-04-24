@@ -3,10 +3,12 @@
 namespace App\Form;
 
 use App\Entity\Band;
+use App\Entity\Country;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class BandType extends AbstractType
 {
@@ -14,7 +16,11 @@ class BandType extends AbstractType
     {
         $builder
             ->add('name', TextType::class)
-            ->add('country', TextType::class)
+            ->add('country', EntityType::class, [
+                'class' => Country::class,
+                'choice_label' => 'name',
+                'placeholder' => 'Sélectionnez un pays',
+            ])
             ->add('picture', TextType::class, [
                 'required' => false,
             ])

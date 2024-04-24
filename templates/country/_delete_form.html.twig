@@ -1,0 +1,4 @@
+<form method="post" action="{{ path('app_country_delete', {'id': country.id}) }}" onsubmit="return confirm('Etes-vous certain de vouloir supprimer ce pays?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ country.id) }}">
+    <button class="btnDelete"><i class="bi bi-trash3"></i></button>
+</form>

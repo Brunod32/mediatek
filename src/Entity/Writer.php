@@ -24,15 +24,15 @@ class Writer
     #[ORM\Column(length: 255)]
     private ?string $lastname = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $country = null;
-
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $picture = null;
 
     #[ORM\OneToMany(mappedBy: 'writer', targetEntity: Book::class)]
     #[ORM\OrderBy(["releasedYear" => "ASC"])]
     private Collection $books;
+
+    #[ORM\ManyToOne(inversedBy: 'writers')]
+    private ?Country $Country = null;
 
     public function __construct()
     {
@@ -70,18 +70,6 @@ class Writer
     public function setLastname(string $lastname): static
     {
         $this->lastname = $lastname;
-
-        return $this;
-    }
-
-    public function getCountry(): ?string
-    {
-        return $this->country;
-    }
-
-    public function setCountry(?string $country): static
-    {
-        $this->country = $country;
 
         return $this;
     }
@@ -124,6 +112,18 @@ class Writer
                 $book->setWriter(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCountry(): ?Country
+    {
+        return $this->Country;
+    }
+
+    public function setCountry(?Country $Country): static
+    {
+        $this->Country = $Country;
 
         return $this;
     }

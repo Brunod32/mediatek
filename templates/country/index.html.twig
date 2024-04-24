@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Country index{% endblock %}
+
+{% block body %}
+{% include 'navbar.html.twig' %}
+    <header>
+        <h1>Les pays</h1>
+        {% if app.user %}
+            <a href="{{ path('app_country_new') }}" class="dashboard"><i class="bi bi-plus-circle"></i></a>
+        {% endif %}
+    </header>
+
+    <main class="container">
+        <ol>
+            {% for country in countries %}
+                <li>{{ country.name }}</li>
+            {% else %}
+                <p>Aucun pays trouvé...</p>
+            {% endfor %}
+        </ol>
+            {# 
+                <a href="{{ path('app_country_show', {'id': country.id}) }}">show</a>
+                <a href="{{ path('app_country_edit', {'id': country.id}) }}">edit</a>
+            #}
+    </main>
+{% include 'footer.html.twig' %}
+{% endblock %}

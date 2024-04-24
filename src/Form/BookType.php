@@ -29,6 +29,7 @@ class BookType extends AbstractType
                 'class' => Writer::class,
                 'multiple'=> false,
                 'expanded' => false,
+                'placeholder' => 'Sélectionnez un auteur',
                 // affiche les options du select par ordre alphabétique
                 'query_builder' => function(WriterRepository $writerRepository) {
                     return $writerRepository

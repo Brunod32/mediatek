@@ -21,9 +21,6 @@ class Band
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $country = null;
-
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $picture = null;
 
@@ -37,6 +34,9 @@ class Band
     // Permet d'afficher la liste des albums par ordre chronologique
     #[ORM\OrderBy(["releasedYear" => "ASC"])]
     private Collection $albums;
+
+    #[ORM\ManyToOne(inversedBy: 'bands')]
+    private ?Country $country = null;
 
     public function __construct()
     {
@@ -61,18 +61,6 @@ class Band
     public function setName(string $name): static
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    public function getCountry(): ?string
-    {
-        return $this->country;
-    }
-
-    public function setCountry(string $country): static
-    {
-        $this->country = $country;
 
         return $this;
     }
@@ -139,6 +127,18 @@ class Band
                 $album->setBand(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCountry(): ?Country
+    {
+        return $this->country;
+    }
+
+    public function setCountry(?Country $country): static
+    {
+        $this->country = $country;
 
         return $this;
     }

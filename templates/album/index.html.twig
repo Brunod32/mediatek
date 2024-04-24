@@ -12,19 +12,19 @@
     </header>
     
     <main class="container containerEntity">
-    {% for album in albums %}
-        <a href="{{ path('app_album_show', {'id': album.id}) }}">
-            <div class="card cardAlbum">
-                {% if album.albumCover %}
-                    <img src="{{ album.albumCover }}" title="{{ album.title }}" class="card-img-top" alt="Image de {{ album.title }}">
-                {% else %} 
-                    <img src="{{ asset('asset/img/cdDefault.jpg') }}" title="Image de concert" class="card-img-top" alt="Image de concert">
-                {% endif %}
-                <div class="card-body text-center">
-                    <h5 class="card-title">{{ album.title|title }}</h5>               
+        {% for album in albums %}
+            <a href="{{ path('app_album_show', {'id': album.id}) }}">
+                <div class="card cardAlbum">
+                    {% if album.albumCover %}
+                        <img src="{{ album.albumCover }}" title="{{ album.title }}" class="card-img-top" alt="Image de {{ album.title }}">
+                    {% else %} 
+                        <img src="{{ asset('asset/img/cdDefault.jpg') }}" title="Image de concert" class="card-img-top" alt="Image de concert">
+                    {% endif %}
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ album.title|title }}</h5>               
+                    </div>
                 </div>
-            </div>
-        </a>
+            </a>
         {% else %}
             <p>Aucun album trouvé...</p>
         {% endfor %}
