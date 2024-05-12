@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Book;
 use App\Entity\Writer;
+use App\Entity\LiteraryStyle;
 use App\Repository\WriterRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
@@ -38,7 +39,11 @@ class BookType extends AbstractType
                 }
             ])
             ->add('releasedYear', TextType::class)
-            ->add('genre', TextType::class)
+            ->add('style', EntityType::class, [
+                'class' => LiteraryStyle::class,
+                'choice_label' => 'name',
+                'placeholder' => 'Sélectionnez un style littéraire',
+            ])
         ;
     }
 

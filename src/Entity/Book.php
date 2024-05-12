@@ -35,8 +35,8 @@ class Book
     #[ORM\Column(nullable: true)]
     private ?int $releasedYear = null;
 
-    #[ORM\Column(length: 20, nullable: true)]
-    private ?string $genre = null;
+    #[ORM\ManyToOne(inversedBy: 'books')]
+    private ?LiteraryStyle $style = null;
 
     public function getId(): ?int
     {
@@ -115,14 +115,14 @@ class Book
         return $this;
     }
 
-    public function getGenre(): ?string
+    public function getStyle(): ?LiteraryStyle
     {
-        return $this->genre;
+        return $this->style;
     }
 
-    public function setGenre(?string $genre): static
+    public function setStyle(?LiteraryStyle $style): static
     {
-        $this->genre = $genre;
+        $this->style = $style;
 
         return $this;
     }

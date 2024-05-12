@@ -42,14 +42,14 @@ class BookController extends AbstractController
     #[Route('/book/{id}', name: 'app_book_show', methods: ['GET'])]
     public function show(Book $book, BookRepository $bookRepository): Response
     {
-        // Afficher la liste des livres du même genre
-        $genreOfBook = $book->getGenre();
+        // Afficher la liste des livres du même style
+        $styleOfBook = $book->getStyle();
         $allBooks = $bookRepository->findAll();
 
         return $this->render('book/show.html.twig', [
             'book' => $book,
             'allBooks' => $allBooks,
-            'genreOfBook' => $genreOfBook,
+            'styleOfBook' => $styleOfBook,
         ]);
     }
 

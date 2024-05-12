@@ -40,9 +40,9 @@
                     {% endif %}
                 </div>
                 <div>
-                    <h3>Genre</h3>
-                    {% if book.genre %}
-                        <p>{{ book.genre|title }}</p>
+                    <h3>Style Lttéraire</h3>
+                    {% if book.style %}
+                        <p>{{ book.style|title }}</p>
                     {% else %}
                         <p>Donnée non renseignée...</p>
                     {% endif %}
@@ -78,7 +78,7 @@
             <h2 class="mb-3">Dans le même genre:</h2>
             {% for allBook in allBooks %}
             <div class="similarBooks">
-                {% if allBook.genre|title is same as(book.genre|title) and allBook.title is not same as(book.title) %}
+                {% if allBook.style|title is same as(book.style|title) and allBook.title is not same as(book.title) %}
                     {% if allBook.bookCover %}
                         <img src="{{ allBook.bookCover }}" alt="image du livre {{ allBook.title|title }}" class="bookImgSimilar">
                     {% else %}

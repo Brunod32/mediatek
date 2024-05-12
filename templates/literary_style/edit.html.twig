@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification style littéraire{% endblock %}
+
+{% block body %}
+{% include 'navbar.html.twig' %}
+    <header>
+        <h1>Modifier {{ literary_style.name }}</h1>
+        <div class="dashboard">
+            <a href="{{ path('app_literary_style_index') }}"><i class="bi bi-backspace-fill"></i></a>
+            {{ include('literary_style/_delete_form.html.twig') }}
+
+        </div>
+    </header>
+
+    <main>
+        {{ include('literary_style/_form.html.twig', {'button_label': 'Modifier'}) }}
+    </main>
+    
+{% endblock %}
