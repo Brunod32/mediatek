@@ -8,9 +8,9 @@
         <h1>{{ band.name }}</h1>
         {% if app.user %}
             <div class="dashboard">
-                <a href="{{ path('app_band_index') }}"><i class="bi bi-backspace-fill"></i></a>
+                <a href="{{ path('app_band_index') }}" title="Retour"><i class="bi bi-backspace-fill"></i></a>
 
-                <a href="{{ path('app_band_edit', {'id': band.id}) }}"><i class="bi bi-pencil-square"></i></a>
+                <a href="{{ path('app_band_edit', {'id': band.id}) }}" title="Modifier le groupe"><i class="bi bi-pencil-square"></i></a>
 
                 {{ include('band/_delete_form.html.twig') }}
             </div>

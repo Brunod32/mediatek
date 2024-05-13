@@ -1,4 +1,4 @@
 <form method="post" action="{{ path('app_literary_style_delete', {'id': literary_style.id}) }}" onsubmit="return confirm('Etes-vous certain de vouloir supprimer ce style littéraire ?');">
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ literary_style.id) }}">
-    <button class="btnDelete"><i class="bi bi-trash3"></i></button>
+    <button class="btnDelete" title="Supprimer"><i class="bi bi-trash3"></i></button>
 </form>

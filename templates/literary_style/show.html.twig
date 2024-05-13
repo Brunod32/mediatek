@@ -8,9 +8,9 @@
         <h1>Styles littéraires</h1>
         {% if app.user %}
             <div class="dashboard">
-                <a href="{{ path('app_literary_style_index') }}"><i class="bi bi-backspace-fill"></i></a>
+                <a href="{{ path('app_literary_style_index') }}" title="Retour"><i class="bi bi-backspace-fill"></i></a>
 
-                <a href="{{ path('app_literary_style_edit', {'id': literary_style.id}) }}"><i class="bi bi-pencil-square"></i></a>
+                <a href="{{ path('app_literary_style_edit', {'id': literary_style.id}) }}" title="Modifier le style littéraire"><i class="bi bi-pencil-square"></i></a>
 
                 {{ include('literary_style/_delete_form.html.twig') }}
             </div>

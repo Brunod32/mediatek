@@ -7,10 +7,10 @@
     <header>
         <h1>Ajouter un groupe</h1>
         <div class="dashboard">
-            <a href="{{ path('app_band_index') }}"><i class="bi bi-backspace-fill"></i></a>
+            <a href="{{ path('app_band_index') }}" title="Retour"><i class="bi bi-backspace-fill"></i></a>
             {% if app.user %}
-                <a href="{{ path('app_country_new') }}" class="dashboard" title="Ajouter un pays"><i class="bi bi-plus-circle"></i></a>
-                <a href="{{ path('app_metal_style_new') }}" class="dashboard" title="Ajouter un style de métal"><i class="bi bi-plus-circle"></i></a>
+                <a href="{{ path('app_country_new') }}" class="dashboard" title="Ajouter un pays"><i class="bi bi-globe-europe-africa"></i></a>
+                <a href="{{ path('app_metal_style_new') }}" class="dashboard" title="Ajouter un style de métal"><i class="bi bi-music-note-beamed""></i></i></a>
             {% endif %}
         </div>
     </header>

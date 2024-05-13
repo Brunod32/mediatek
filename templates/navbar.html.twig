@@ -13,11 +13,11 @@
             </form>
             <div id="btn-log">
                 {% if not app.user %}
-                    <a href="{{ path('app_login') }}" type="button" class="btn btn-outline-primary me-2 px-2"><i class="bi bi-box-arrow-in-right"></i></a>
+                    <a href="{{ path('app_login') }}" type="button" class="btn btn-outline-primary me-2 px-2" title="Connexion"><i class="bi bi-box-arrow-in-right"></i></a>
                 {% endif %}
                 {% if app.user %}
-                    <a href="{{ path('app_account') }}" type="button" class="btn btn-outline-primary me-2 px-2"><i class="bi bi-person-vcard"></i></a>
-                    <a href="{{ path('app_logout') }}" type="button" class="btn btn-outline-primary me-2 px-2"><i class="bi bi-box-arrow-in-left"></i></a>
+                    <a href="{{ path('app_account') }}" type="button" class="btn btn-outline-primary me-2 px-2" title="Mon profil"><i class="bi bi-person-vcard"></i></a>
+                    <a href="{{ path('app_logout') }}" type="button" class="btn btn-outline-primary me-2 px-2" title="Déconnexion"><i class="bi bi-box-arrow-in-left"></i></a>
                 {% endif %}
             </div>
         </div>
