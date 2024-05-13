@@ -43,13 +43,13 @@ class BandController extends AbstractController
     public function show(Band $band, BandRepository $bandRepository): Response
     {
         // Afficher les groupes du même genre de métal que la page du groupe
-        $kindOfMetalParam = $band->getKindOfMetal();
+        $styleOfMetalParam = $band->getStyle();
         $allBands = $bandRepository->findAll();
         
         return $this->render('band/show.html.twig', [
             'band' => $band,
             'allBands' => $allBands,
-            'bandKindOfMetal' => $kindOfMetalParam,
+            'styleOfMetal' => $styleOfMetalParam,
         ]);
     }
 

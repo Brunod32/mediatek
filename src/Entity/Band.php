@@ -24,9 +24,6 @@ class Band
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $picture = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $kindOfMetal = null;
-
     #[ORM\Column(nullable: true)]
     private ?int $creationYear = null;
 
@@ -37,6 +34,9 @@ class Band
 
     #[ORM\ManyToOne(inversedBy: 'bands')]
     private ?Country $country = null;
+
+    #[ORM\ManyToOne(inversedBy: 'bands')]
+    private ?MetalStyle $style = null;
 
     public function __construct()
     {
@@ -73,18 +73,6 @@ class Band
     public function setPicture(?string $picture): static
     {
         $this->picture = $picture;
-
-        return $this;
-    }
-
-    public function getKindOfMetal(): ?string
-    {
-        return $this->kindOfMetal;
-    }
-
-    public function setKindOfMetal(?string $kindOfMetal): static
-    {
-        $this->kindOfMetal = $kindOfMetal;
 
         return $this;
     }
@@ -139,6 +127,18 @@ class Band
     public function setCountry(?Country $country): static
     {
         $this->country = $country;
+
+        return $this;
+    }
+
+    public function getStyle(): ?MetalStyle
+    {
+        return $this->style;
+    }
+
+    public function setStyle(?MetalStyle $style): static
+    {
+        $this->style = $style;
 
         return $this;
     }

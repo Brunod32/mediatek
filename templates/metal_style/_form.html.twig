@@ -1,0 +1,8 @@
+{{ form_start(form) }}
+    <div class="formDiv">
+        <div class="formInForm">
+            {{ form_row(form.name, { 'label' : 'Style de métal'}) }}
+        </div>
+    </div>
+    <button class="btn btn-outline-primary mt-4">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}

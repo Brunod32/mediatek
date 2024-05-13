@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Style de métal{% endblock %}
+
+{% block body %}
+{% include 'navbar.html.twig' %}
+    <header>
+        <h1>Les styles de métal</h1>
+        {% if app.user %}
+            <a href="{{ path('app_metal_style_new') }}" class="dashboard"><i class="bi bi-plus-circle"></i></a>
+        {% endif %}
+    </header>
+
+    <main class="container">
+        <ol>
+            {% for style in metal_styles %}
+                <li>{{ style.name }}</li>
+            {% else %}
+                <p>Aucun style trouvé...</p>
+            {% endfor %}
+        </ol>
+            {# 
+                <a href="{{ path('app_metal_style_show', {'id': metal_style.id}) }}">show</a>
+                <a href="{{ path('app_metal_style_edit', {'id': metal_style.id}) }}">edit</a>
+            #}
+    </main>
+{% include 'footer.html.twig' %}
+
+{% endblock %}

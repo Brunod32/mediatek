@@ -47,8 +47,8 @@
                 
                 <div class="mt-4">
                     <h3>Style de métal :</h3>
-                    {% if band.kindOfMetal %}
-                        <p>{{ band.kindOfMetal|capitalize}}</p>
+                    {% if band.style %}
+                        <p>{{ band.style|capitalize}}</p>
                     {% else %}
                         <p>Donnée non renseignée...</p>
                     {% endif %}
@@ -74,7 +74,7 @@
             {% for allBand in allBands %}
             <a href="{{ path('app_band_show', {'id': allBand.id }) }}">
                 <div class="similarBands">
-                    {% if allBand.kindOfMetal is same as(bandKindOfMetal) and allBand.name is not same as(band.name) %}
+                    {% if allBand.style is same as(band.style) and allBand.name is not same as(band.name) %}
                         {% if allBand.picture %}
                             <img src="{{ allBand.picture }}" class="bandImgSimilar" alt="image du groupe {{ allBand.name }}">
                         {% else %} 

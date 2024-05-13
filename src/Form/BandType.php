@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Band;
 use App\Entity\Country;
+use App\Entity\MetalStyle;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -24,7 +25,11 @@ class BandType extends AbstractType
             ->add('picture', TextType::class, [
                 'required' => false,
             ])
-            ->add('kindOfMetal', TextType::class)
+            ->add('style', EntityType::class, [
+                'class' => MetalStyle::class,
+                'choice_label' => 'name',
+                'placeholder' => 'Sélectionnez un style',
+            ])
             ->add('creationYear', TextType::class)
         ;
     }
