@@ -5,7 +5,7 @@
 {% block body %}
 {% include 'navbar.html.twig' %}
     <header>
-        <h1>Modifier le livre {{ book.title }}</h1>
+        <h1>Modifier le livre {{ book.title|title }}</h1>
         <div class="dashboard">
             <a href="{{ path('app_book_index') }}" title="Retour"><i class="bi bi-backspace-fill"></i></a>
 
