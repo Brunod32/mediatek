@@ -37,7 +37,6 @@ class AlbumTest extends TestCase
         $album->setAlbumCover('lacover');
         $album->setBand($band);
 
-
         $this->assertNotEmpty($album->getTitle());
         $this->assertNotEmpty($album->getReleasedYear());
         $this->assertNotEmpty($album->getAlbumCover());

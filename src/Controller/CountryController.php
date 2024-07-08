@@ -65,7 +65,7 @@ class CountryController extends AbstractController
         ]);
     }
 
-    #[Route('/admin/album/{id}', name: 'app_country_delete', methods: ['POST'])]
+    #[Route('/admin/country/{id}', name: 'app_country_delete', methods: ['POST'])]
     public function delete(Request $request, Country $country, CountryRepository $countryRepository): Response
     {
         if ($this->isCsrfTokenValid('delete'.$country->getId(), $request->request->get('_token'))) {

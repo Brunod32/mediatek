@@ -12,14 +12,6 @@ use App\Repository\BookRepository;
 
 class SearchController extends AbstractController
 {
-    // #[Route('/search', name: 'app_search')]
-    // public function index(): Response
-    // {
-    //     return $this->render('search/index.html.twig', [
-    //         'controller_name' => 'SearchController',
-    //     ]);
-    // }
-
     #[Route('/search-results', name: 'search-result')]
     public function searchBand(
         Request $request,
